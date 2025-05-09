@@ -1,0 +1,6 @@
+[submodule ".config/yazi"]
+	path = .config/yazi
+	url = https://github.com/jacobeulogio/yazi-dotfiles
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/jacobeulogio/kickstart.nvim
