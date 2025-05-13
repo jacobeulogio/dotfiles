@@ -8,9 +8,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # Path to oh-my-zsh installation.
 export ZSH="/usr/share/oh-my-zsh"
+# export ZSH="/data/data/com.termux/files/usr/share/oh-my-zsh"
+
 source $ZSH/oh-my-zsh.sh
 
 [[ -z "${plugins[*]}" ]] && plugins=(git fzf extract)
@@ -49,7 +52,12 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 # pkgfile "command not found" handler
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
+# source /data/data/com.termux/files/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /data/data/com.termux/files/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# source /data/data/com.termux/files/usr/share/doc/pkgfile/command-not-found.zsh
+
 export FZF_BASE=/usr/share/fzf
+# export FZF_BASE=/data/data/com.termux/files/usr/share/fzf
 
 # Brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
