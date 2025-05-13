@@ -22,33 +22,53 @@ general = "Alacritty"
 history = 10000
 multiplier = 3
 
+[general]
+live_config_reload = true
+working_directory = "None"
+# import = [
+#     "~/.config/alacritty/themes/themes/kanagawa-dragon.toml"
+# ]
+
 [colors]
 draw_bold_text_with_bright_colors = true
 
- [colors.primary]
- background = "#000000"
-# # "0x2E3440"
-foreground = "0xD8DEE9"
+[colors.primary]
+background = "#000000"
+foreground = "#c5c9c5"
 
 [colors.normal]
-black = "0x3B4252"
-red = "0xBF616A"
-green = "0xA3BE8C"
-yellow = "0xEBCB8B"
-blue = "0x81A1C1"
-magenta = "0xB48EAD"
-cyan = "0x88C0D0"
-white = "0xE5E9F0"
+black = '#0d0c0c'
+blue = '#8ba4b0'
+cyan = '#8ea4a2'
+green = '#8a9a7b'
+magenta = '#a292a3'
+red = '#c4746e'
+white = '#C8C093'
+yellow = '#c4b28a'
 
-[colors.bright]
-black = "0x4C566A"
-red = "0xBF616A"
-green = "0xA3BE8C"
-yellow = "0xEBCB8B"
-blue = "0x81A1C1"
-magenta = "0xB48EAD"
-cyan = "0x8FBCBB"
-white = "0xECEFF4"
+[colors.selection]
+background = '#2d4f67'
+foreground = '#c8c093'
+
+# [colors.normal]
+# black = "0x3B4252"
+# red = "0xBF616A"
+# green = "0xA3BE8C"
+# yellow = "0xEBCB8B"
+# blue = "0x81A1C1"
+# magenta = "0xB48EAD"
+# cyan = "0x88C0D0"
+# white = "0xE5E9F0"
+#
+# [colors.bright]
+# black = "0x4C566A"
+# red = "0xBF616A"
+# green = "0xA3BE8C"
+# yellow = "0xEBCB8B"
+# blue = "0x81A1C1"
+# magenta = "0xB48EAD"
+# cyan = "0x8FBCBB"
+# white = "0xECEFF4"
 
 [font]
 size = 13
@@ -161,9 +181,3 @@ key = "Key0"
 mods = "Control"
 action = "ResetFontSize"
 
-[general]
-live_config_reload = true
-working_directory = "None"
-import = [
-    "~/.config/alacritty/themes/themes/ayu_mirage.toml"
-]
