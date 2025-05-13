@@ -1,16 +1,14 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-   exec tmux new-session -A -s main
-fi
+
+# if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+#    exec tmux new-session -A -s main
+# fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
@@ -46,6 +44,7 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 alias vim="nvim"
 alias cd="z"
+alias tm="tmux new-session -A -s main"
 
 # Fish-like syntax highlighting and autosuggestions
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -118,3 +117,6 @@ rmvenv() {
 eval "$(uv generate-shell-completion zsh)"
 
 eval "$(zoxide init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
