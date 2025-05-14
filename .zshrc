@@ -1,24 +1,32 @@
+# Tmux 
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+  if tmux has-session -t main 2>/dev/null; then
+    exec tmux attach-session -t main
+  else
+    exec tmux new-session -s main
+  fi
+fi
 
-# if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-#    exec tmux new-session -A -s main
-# fi
-
+# POWERLEVEL10K
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+source ~/zsh/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/doc/pkgfile/command-not-found.zsh
-source ~/commands.zsh
-
-# Path to oh-my-zsh installation.
+# Oh my ZSH
 export ZSH="/usr/share/oh-my-zsh"
-
 [[ -z "${plugins[*]}" ]] && plugins=(git fzf extract)
+source $ZSH/oh-my-zsh.sh
+
+# Original file location for plugins are in /usr/share/zsh
+# ZSH Plugins
+source ~/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Commands and Aliases
+source ~/zsh/command-not-found.zsh
+source ~/zsh/commands.zsh
 
 DISABLE_MAGIC_FUNCTIONS="true"
 ENABLE_CORRECTION="true"
@@ -38,7 +46,8 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 # shells instead of the default "last window closed" history.
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-export FZF_BASE=/usr/share/fzf
+# FZF
+export FZF_BASE=~/zsh/fzf                                        #/usr/share/fzf
 # export FZF_BASE=/data/data/com.termux/files/usr/share/fzf
 
 # Brew
