@@ -69,7 +69,7 @@ eval "$(atuin init zsh)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-source ./commands.zsh
+source ~/commands.zsh
 
 . "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
