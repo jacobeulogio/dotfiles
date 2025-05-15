@@ -12,4 +12,5 @@
 	url = https://github.com/romkatv/powerlevel10k
 [submodule ".config/alacritty/themes"]
 	path = .config/alacritty/themes
-	url = https://github.com/alacritty/alacritty-themes
+	url = https://github.com/alacritty/alacritty-theme
+
