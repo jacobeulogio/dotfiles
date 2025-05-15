@@ -47,8 +47,9 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # FZF
-export FZF_BASE=~/zsh/fzf                                        #/usr/share/fzf
-# export FZF_BASE=/data/data/com.termux/files/usr/share/fzf
+export FZF_BASE="$HOME/zsh/fzf"                                        #/usr/share/fzf
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # Brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -57,12 +58,10 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
-. "$HOME/.local/bin/env"
+# uv
 eval "$(uv generate-shell-completion zsh)"
 
+# Zoxide
 eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
