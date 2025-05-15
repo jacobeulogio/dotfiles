@@ -47,8 +47,6 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # FZF
-export FZF_BASE="$HOME/zsh/fzf"                                        #/usr/share/fzf
-# Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
 # Brew
