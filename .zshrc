@@ -47,6 +47,7 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # FZF
+# export FZF_BASE=""
 source <(fzf --zsh)
 
 # Brew
