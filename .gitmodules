@@ -3,7 +3,7 @@
 	url = https://github.com/jacobeulogio/yazi-dotfiles
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = https://github.com/jacobeulogio/kickstart.nvim
+	url = https://github.com/jacobeulogio/nvim-dotfiles
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
