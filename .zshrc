@@ -11,10 +11,10 @@ fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-source ~/zsh/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source ~/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Oh my ZSH
-export ZSH="/usr/share/oh-my-zsh"
+export ZSH="$HOME/zsh/oh-my-zsh"
 [[ -z "${plugins[*]}" ]] && plugins=(git fzf extract)
 source $ZSH/oh-my-zsh.sh
 
@@ -71,3 +71,16 @@ eval "$(zoxide init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/eulogio/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
