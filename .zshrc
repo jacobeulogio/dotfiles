@@ -11,10 +11,10 @@ fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-source ~/zsh/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source ~/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Oh my ZSH
-export ZSH="/usr/share/oh-my-zsh"
+export ZSH="$HOME/zsh/oh-my-zsh"
 [[ -z "${plugins[*]}" ]] && plugins=(git fzf extract)
 source $ZSH/oh-my-zsh.sh
 
@@ -47,8 +47,7 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # FZF
-export FZF_BASE=~/zsh/fzf                                        #/usr/share/fzf
-# export FZF_BASE=/data/data/com.termux/files/usr/share/fzf
+source <(fzf --zsh)
 
 # Brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -57,17 +56,36 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
+# uv
 . "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 
+# Zoxide
 eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/eulogio/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
