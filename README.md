@@ -5,7 +5,7 @@ Collection of my dotfiles for easy migration
 
 ### Clone the Repo
 ```
-git clone https://github.com/jacobeulogio/dotfiles.git ~/dotfiles
+git clone --recurse-submodules https://github.com/jacobeulogio/dotfiles.git ~/dotfiles
 ```
 
 ### Install GNU Stow
