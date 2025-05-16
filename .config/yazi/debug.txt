@@ -1,0 +1,80 @@
+Yazi
+    Version: 25.4.8 (Arch Linux 2025-04-09)
+    Debug  : false
+    Triple : x86_64-unknown-linux-gnu (linux-x86_64)
+    Rustc  : 1.86.0 (05f9846f 2025-03-31)
+
+Ya
+    Version: 25.4.8 (Arch Linux 2025-04-09)
+
+Emulator
+    TERM                : Some("tmux-256color")
+    TERM_PROGRAM        : Some("tmux")
+    TERM_PROGRAM_VERSION: Some("3.5a")
+    Brand.from_env      : None
+    Emulator.detect     : Emulator { kind: Right(Unknown { kgp: false, sixel: false }), light: false, cell_size: Some((10, 24)) }
+
+Adapter
+    Adapter.matches    : Chafa
+    Dimension.available: WindowSize { rows: 44, columns: 192, width: 1920, height: 1056 }
+
+Desktop
+    XDG_SESSION_TYPE           : Some("wayland")
+    WAYLAND_DISPLAY            : Some("wayland-0")
+    DISPLAY                    : Some(":0")
+    SWAYSOCK                   : None
+    HYPRLAND_INSTANCE_SIGNATURE: None
+    WAYFIRE_SOCKET             : None
+
+SSH
+    shared.in_ssh_connection: false
+
+WSL
+    WSL: false
+
+Variables
+    SHELL           : Some("/bin/zsh")
+    EDITOR          : None
+    VISUAL          : None
+    YAZI_FILE_ONE   : None
+    YAZI_CONFIG_HOME: None
+    YAZI_ZOXIDE_OPTS: None
+    FZF_DEFAULT_OPTS: None
+
+Text Opener
+    default     : Some(OpenerRule { run: "${EDITOR:-nvim} \"$@\"", block: true, orphan: false, desc: "$EDITOR", for_: None, spread: true })
+    block-create: Some(OpenerRule { run: "${EDITOR:-nvim} \"$@\"", block: true, orphan: false, desc: "$EDITOR", for_: None, spread: true })
+    block-rename: Some(OpenerRule { run: "${EDITOR:-nvim} \"$@\"", block: true, orphan: false, desc: "$EDITOR", for_: None, spread: true })
+
+Multiplexers
+    TMUX               : true
+    tmux version       : tmux 3.5a
+    tmux build flags   : enable-sixel=Unknown
+    ZELLIJ_SESSION_NAME: None
+    Zellij version     : No such file or directory (os error 2)
+
+Dependencies
+    file          : 5.46
+    ueberzugpp    : No such file or directory (os error 2)
+    ffmpeg/ffprobe: 7.1.1 / 7.1.1
+    pdftoppm      : 25.04.0
+    magick        : 7.1.1-47
+    fzf           : 0.61.3
+    fd/fdfind     : 10.2.0 / No such file or directory (os error 2)
+    rg            : 14.1.1
+    chafa         : No such file or directory (os error 2)
+    zoxide        : 0.9.7
+    7zz/7z        : No such file or directory (os error 2) / 24.09
+    jq            : 1.7.1
+
+Clipboard
+    wl-copy/paste: 2.2.1 / 2.2.1
+    xclip        : No such file or directory (os error 2)
+    xsel         : No such file or directory (os error 2)
+
+Routine
+    `file -bL --mime-type`: text/plain
+
+
+See https://yazi-rs.github.io/docs/plugins/overview#debugging on how to enable logging or debug runtime errors.
+
