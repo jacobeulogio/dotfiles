@@ -46,9 +46,9 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 # shells instead of the default "last window closed" history.
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-# FZF
-# export FZF_BASE=""
-source <(fzf --zsh)
+# fzf 
+source ./zsh/fzf/completion.zsh
+source ./zsh/fzf/key-bindings.zsh
 
 # Brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
