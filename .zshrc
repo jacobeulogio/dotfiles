@@ -15,7 +15,7 @@ source ~/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Oh my ZSH
 export ZSH="$HOME/zsh/oh-my-zsh"
-[[ -z "${plugins[*]}" ]] && plugins=(git fzf extract)
+[[ -z "${plugins[*]}" ]] && plugins=(git fzf extract zsh-vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # Original file location for plugins are in /usr/share/zsh
@@ -69,7 +69,7 @@ eval "$(zoxide init zsh)"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
   export EDITOR='nvim'
 fi
@@ -77,6 +77,12 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Tmux window naming plugin
+tmux-window-name() {
+  ($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+}
+add-zsh-hook chpwd tmux-window-name
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -86,12 +92,6 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/eulogio/.zshrc'
-
-# tmux plugin window naming
-tmux-window-name() {
-	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
-}
-add-zsh-hook chpwd tmux-window-name
 
 autoload -Uz compinit
 compinit
