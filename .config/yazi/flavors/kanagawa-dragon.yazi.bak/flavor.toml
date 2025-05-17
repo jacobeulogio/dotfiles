@@ -25,7 +25,7 @@ marker_cut = { fg = "#e46876", bg = "#e46876" }
 marker_marked = { fg = "#a292a3", bg = "#a292a3" }
 marker_selected = { fg = "#e46876", bg = "#e46876" }
 
-cwd = { fg = "#7aa89f", bold=true }
+cwd = { fg = "#e6c384" }
 hovered = { reversed = true }
 preview_hovered = { reversed = true }
 
