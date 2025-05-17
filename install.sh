@@ -13,3 +13,6 @@ echo "require("githead"):setup()" >> ~/.config/yazi/init.lua
 
 # atuin
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+# tmux
+sudo pacman -S python-libtmux

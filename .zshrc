@@ -87,6 +87,12 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/eulogio/.zshrc'
 
+# tmux plugin window naming
+tmux-window-name() {
+	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+}
+add-zsh-hook chpwd tmux-window-name
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
