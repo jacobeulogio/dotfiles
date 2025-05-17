@@ -1,9 +1,9 @@
 # Tmux 
 if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   if tmux has-session -t main 2>/dev/null; then
-    exec tmux
+    tmux
   else
-    exec tmux new-session -A -s main
+    tmux new-session -A -s main
   fi
 fi
 
