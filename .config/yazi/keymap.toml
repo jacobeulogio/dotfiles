@@ -130,7 +130,7 @@ keymap = [
 	{ on = [ "g", "d" ],       run = "cd ~/dotfiles/",   desc = "Go ~/Downloads" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Jump interactively" },
 	{ on = [ "g", "f" ],       run = "follow",           desc = "Follow hovered symlink" },
-	{ on = [ "g", "p" ],       run = "cd /mnt/c/Users/jbenitez/projects/", desc = "Go to Projects" },
+	{ on = [ "g", "P" ],       run = "cd /mnt/c/Users/jbenitez/projects/", desc = "Go to Projects" },
 	{ on = [ "g", "p" ],       run = "cd ~/projects/", desc = "Go to Projects" },
 	{ on = [ "g", "T" ],       run = "cd ~/.local/share/Trash", desc = "Go to Trash" },
 
