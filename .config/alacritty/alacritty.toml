@@ -95,7 +95,7 @@ save_to_clipboard = true
 
 [cursor]
 style = "Underline"
-vi_mode_style = "None"
+vi_mode_style = "Beam"
 unfocused_hollow = true
 thickness = 0.15
 
