@@ -36,3 +36,5 @@ require("githead"):setup({
 	untracked_color = "blue",
 	untracked_symbol = "?",
 })
+
+require("no-status"):setup()
