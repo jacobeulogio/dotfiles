@@ -41,7 +41,7 @@ count_cut = { fg = "#181616", bg = "#e46876" }
 count_selected = { fg = "#181616", bg = "#e6c384" }
 
 border_symbol = "│"
-border_style = { fg = "#c5c9c5" }
+border_style = { fg = "#272727" }
 
 
 [mode]
