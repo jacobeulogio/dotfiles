@@ -1,14 +1,12 @@
 # Tmux 
 if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-  if tmux has-session -t main 2>/dev/null; then
+  if tmux list-clients -F '#S' | grep "main" 2>/dev/null; then
     i=1
     while [[ $i -lt 100 ]]; do
       if ! tmux list-clients -F '#S' | grep "$i" ; then
-        echo "$1 does not exist, new session name: $1"
         tmux new-session -A -s "$i"
         break
       else 
-        echo "$1 exists adding 1"
         ((i++))
       fi
     done

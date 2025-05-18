@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 return {
 
 	initial_cols = 180,
-	initial_rows = 47,
+	initial_rows = 46,
 
 	font_size = 13,
 	font = wezterm.font("JetBrains Mono"),
