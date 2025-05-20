@@ -18,8 +18,8 @@ config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.colors = {
 	background = "black",
 	cursor_bg = "silver",
+	cursor_border = "silver",
 	selection_fg = "black",
-	selection_bg = "#fffacd",
 }
 
 config.enable_tab_bar = false
