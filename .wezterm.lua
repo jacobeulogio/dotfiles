@@ -21,6 +21,8 @@ config.colors = {
 
 config.enable_tab_bar = false
 
-config.window_background_opacity = 0.94
+config.window_background_opacity = 0.95
+
+config.window_close_confirmation = "NeverPrompt"
 
 return config
