@@ -16,7 +16,10 @@ config.font = wezterm.font("JetBrains Mono")
 
 config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.colors = {
-	background = "#000000",
+	background = "black",
+	cursor_bg = "silver",
+	selection_fg = "black",
+	selection_bg = "#fffacd",
 }
 
 config.enable_tab_bar = false

@@ -38,3 +38,5 @@ require("githead"):setup({
 })
 
 require("no-status"):setup()
+
+require("git"):setup()

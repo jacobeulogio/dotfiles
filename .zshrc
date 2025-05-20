@@ -19,7 +19,7 @@ fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-source ~/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Oh my ZSH
 export ZSH="$HOME/zsh/oh-my-zsh"
@@ -33,8 +33,8 @@ source ~/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.z
 source ~/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Commands and Aliases
-source ~/zsh/command-not-found.zsh
-source ~/zsh/commands.zsh
+source $HOME/zsh/command-not-found.zsh
+source $HOME/zsh/commands.zsh
 
 DISABLE_MAGIC_FUNCTIONS="true"
 ENABLE_CORRECTION="true"
@@ -55,8 +55,8 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # fzf 
-source ./zsh/fzf/completion.zsh
-source ./zsh/fzf/key-bindings.zsh
+source $HOME/zsh/fzf/completion.zsh
+source $HOME/zsh/fzf/key-bindings.zsh
 
 # Brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

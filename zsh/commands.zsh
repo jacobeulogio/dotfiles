@@ -2,6 +2,7 @@
 alias vim="nvim"
 alias cd="z"
 alias tm="tmux new-session -A -s main"
+alias ipython="ipython --no-autoindent"
 
 # Yazi
 function y() {
