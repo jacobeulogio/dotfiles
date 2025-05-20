@@ -13,6 +13,16 @@ use = "yazi-rs/plugins:no-status"
 rev = "55bf699"
 hash = "513a23ac28e1eaa626f3a1bb6c8130d0"
 
+[[plugin.deps]]
+use = "AnirudhG07/rich-preview"
+rev = "fdcf373"
+hash = "bd1737dd44b202f412122e6a3b378d4c"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "55bf699"
+hash = "5cf6118259765a267f3e2717acc79095"
+
 [[flavor.deps]]
 use = "marcosvnmelo/kanagawa-dragon"
 rev = "4905527"
