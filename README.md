@@ -11,7 +11,7 @@ Collection of my dotfiles for easy migration
 
 git clone --recurse-submodules --remote-submodules https://github.com/jacobeulogio/dotfiles.git ~/dotfiles
 
-```bash
+```
 
 ### Install GNU Stow
 
