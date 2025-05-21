@@ -25,7 +25,7 @@ marker_cut = { fg = "#e46876", bg = "#e46876" }
 marker_marked = { fg = "#a292a3", bg = "#a292a3" }
 marker_selected = { fg = "#e46876", bg = "#e46876" }
 
-cwd = { fg = "#7aa89f" }
+cwd = { fg = "#8AA3AF" }
 hovered = { reversed = true }
 preview_hovered = { reversed = true }
 
@@ -133,5 +133,5 @@ rules = [
 
     # fallback
     { name = "*", fg = "#c5c9c5" },
-    { name = "*/", fg = "#8ba4b0" },
+    { name = "*/", fg = "#8AA3AF" },
 ]

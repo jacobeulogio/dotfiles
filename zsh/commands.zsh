@@ -5,7 +5,7 @@ alias tm="tmux new-session -A -s main"
 alias ipython="ipython --no-autoindent"
 
 # Yazi
-function y() {
+function e() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
