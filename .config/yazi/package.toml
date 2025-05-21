@@ -32,3 +32,8 @@ hash = "e0ada736ea676c2bbb3ec705a49526ef"
 use = "marcosvnmelo/kanagawa-dragon"
 rev = "4905527"
 hash = "5fd7aa0bf4e7d9753ad8a4660a6eb94f"
+
+[[flavor.deps]]
+use = "dangooddd/kanagawa"
+rev = "31167ed"
+hash = "a04e157148549bacbb2831aab0e6e8cb"
