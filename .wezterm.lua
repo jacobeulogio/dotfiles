@@ -28,4 +28,11 @@ config.window_background_opacity = 0.95
 
 config.window_close_confirmation = "NeverPrompt"
 
+config.window_padding = {
+	left = "0cell",
+	right = "0cell",
+	top = "0cell",
+	bottom = "0cell",
+}
+
 return config
