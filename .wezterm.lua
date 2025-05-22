@@ -9,9 +9,10 @@ else
 end
 
 config.initial_cols = 180
-config.initial_rows = 46
+config.initial_rows = 47
 
 config.font_size = 13
+
 config.font = wezterm.font("JetBrains Mono")
 
 config.color_scheme = "Kanagawa Dragon (Gogh)"
@@ -24,15 +25,15 @@ config.colors = {
 
 config.enable_tab_bar = false
 
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.92
 
 config.window_close_confirmation = "NeverPrompt"
 
 config.window_padding = {
-	left = "0cell",
-	right = "0cell",
-	top = "0cell",
-	bottom = "0cell",
+	left = "0.5cell",
+	right = "0.5cell",
+	top = "5px",
+	bottom = "5px",
 }
 
 return config
