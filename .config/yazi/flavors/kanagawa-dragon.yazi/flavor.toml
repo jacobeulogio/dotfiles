@@ -129,7 +129,7 @@ rules = [
     { name = "*", is = "orphan", fg = "#c4746e" },
 
     # executables
-    { name = "*", is = "exec", fg = "#76946a" },
+    { name = "*", is = "exec", fg = "#a6a69c" }, #76946a
 
     # fallback
     { name = "*", fg = "#c5c9c5" },
