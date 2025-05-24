@@ -9,7 +9,7 @@ else
 end
 
 config.initial_cols = 180
-config.initial_rows = 47
+config.initial_rows = 46
 
 config.font_size = 13
 
