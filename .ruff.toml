@@ -1,0 +1,55 @@
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+line-length = 120
+indent-width = 4
+
+[lint]
+select = ["ALL"]
+ignore = [
+    "D103",   # Missing docstring in public function
+    "D100",   # Missing docstring in public module
+    "D101",   # Missing docstring in public class
+    "D415",   # First line should end with a period
+    "INP001", # File is not a package
+    "ANN201", # Missing return type annotation
+    "PD901",  # `df` is a bad variable name
+]
+
+fixable = ["ALL"]
+unfixable = [
+    "B",      # Bugbear issues
+    "F401",   # Imported but unused
+    "E501",   # Line too long
+    "UP032",  # Use f-string instead of `format`
+    "RUF100", # Unused import
+]
+
+[format]
+quote-style = "double"
