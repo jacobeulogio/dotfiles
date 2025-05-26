@@ -53,3 +53,5 @@ unfixable = [
 
 [format]
 quote-style = "double"
+skip-magic-trailing-comma = false
+line-ending = "auto"
