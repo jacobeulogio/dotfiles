@@ -40,6 +40,7 @@ ignore = [
     "INP001", # File is not a package
     "ANN201", # Missing return type annotation
     "PD901",  # `df` is a bad variable name
+    "ERA001", # Commented out code
 ]
 
 fixable = ["ALL"]

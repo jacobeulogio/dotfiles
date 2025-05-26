@@ -15,5 +15,9 @@ settings:
       wqa: quit --save
   auto_save.session:
     global: true
+  colors.webpage.darkmode.enabled:
+    global: false
   content.blocking.method:
     global: both
+  content.javascript.clipboard:
+    https://grok.com: access-paste
