@@ -1,12 +1,22 @@
-from libqtile import bar, layout, qtile, widget
+import os
+import subprocess
+
+import traverse
+from libqtile import bar, hook, layout, qtile, widget
 from libqtile.backend.wayland import InputConfig
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
+
+@hook.subscribe.startup_once
+def autostart():
+    subprocess.Popen([os.path.expanduser("~/.config/qtile/autostart.sh")])
+
+
 mod = "mod4"
 terminal = "wezterm"
 browser = "qutebrowser"
-font = "SF Pro Text"
+font = "SF Pro Text SemiBold"
 wallpaper = "/home/eulogio/Downloads/baguio.jpg"
 
 wl_input_rules = {
@@ -22,11 +32,10 @@ wl_input_rules = {
 }
 
 keys = [
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "h", lazy.function(traverse.left), desc="Move focus to left"),
+    Key([mod], "l", lazy.function(traverse.right), desc="Move focus to right"),
+    Key([mod], "j", lazy.function(traverse.down), desc="Move focus down"),
+    Key([mod], "k", lazy.function(traverse.up), desc="Move focus up"),
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
@@ -46,8 +55,17 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
+    # -------------------------------------------------------------
+    # Application Shortcuts
+    # -------------------------------------------------------------
     Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "b", lazy.spawn(browser), desc="Launch terminal"),
+    Key([mod], "b", lazy.spawn(browser), desc="Launch Browser"),
+    Key(
+        [mod],
+        "space",
+        lazy.spawn("rofi -show run -theme ~/dotfiles/.config/rofi/spotlight-dark.rasi"),
+        desc="Launch Rofi",
+    ),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
@@ -61,6 +79,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "F8", lazy.spawn("~/.config/qtile/autostart.sh"), desc="Apply monitor layout"),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -77,7 +96,7 @@ for vt in range(1, 8):
     )
 
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in "123456"]
 
 for i in groups:
     keys.extend(
@@ -89,23 +108,19 @@ for i in groups:
                 lazy.group[i.name].toscreen(),
                 desc=f"Switch to group {i.name}",
             ),
-            # mod + shift + group number = switch to & move focused window to group
             Key(
                 [mod, "shift"],
                 i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc=f"Switch to & move focused window to group {i.name}",
+                lazy.window.togroup(i.name),
+                desc="move focused window to group {}".format(i.name),
             ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod + shift + group number = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
         ],
     )
 
 layouts = [
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=1),
-    layout.MonadTall(border_width=2, margin=4, border_focus="#303030"),
+    layout.MonadTall(border_width=3, margin=0, border_focus="#3a3a3a"),
+    # layout.Columns(border_width=3, margin=0, border_focus="#3a3a3a"),
 ]
 
 widget_defaults = dict(
@@ -115,42 +130,44 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+widgets = [
+    widget.GroupBox(
+        highlight_method="line",
+        active="#ffffff",
+        inactive="#888888",
+        highlight_color="000000",
+        this_current_screen_border="#8ba4b0",
+        font="SF Pro Display",
+    ),
+    widget.Spacer(),
+    widget.Battery(
+        format="  {watt:.2f} W {percent:2.0%} {char}",
+        charge_char="󰂄",
+        discharge_char="󰁹",
+        not_charging_char="󰂄",
+        update_interval=2,
+    ),
+    # widget.StatusNotifier(),
+    widget.Clock(format=" %m-%d %a  %I:%M %p"),
+]
+
 screens = [
     Screen(
         wallpaper="/home/eulogio/Downloads/baguio.jpg",
         top=bar.Bar(
-            [
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(format="{name}"),
-                widget.Battery(
-                    format="{percent:2.0%} {hour:d}:{min:02d} {watt:.2f} W",
-                    charge_controller=lambda: (0, 90),
-                ),
-                # widget.StatusNotifier(),
-                widget.Clock(format="%m-%d %a %I:%M %p"),
-            ],
+            widgets,
             24,
-            background="#1a1a1a",
+            opacity=0.95,
+            padding=20,
+            background="#000000",
         ),
     ),
     Screen(
         wallpaper=wallpaper,
         top=bar.Bar(
-            [
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Battery(
-                    format="{percent:2.0%} {watt:.2f} W",
-                    charge_controller=lambda: (0, 90),
-                ),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Clock(format="%m-%d %a %I:%M %p"),
-            ],
+            widgets,
             24,
-            background="#1a1a1a",
+            background="#101010",
         ),
     ),
 ]
