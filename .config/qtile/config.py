@@ -17,7 +17,7 @@ mod = "mod4"
 terminal = "wezterm"
 browser = "qutebrowser"
 font = "SF Pro Text SemiBold"
-wallpaper = "/home/eulogio/Downloads/baguio.jpg"
+wallpaper = "baguio.jpg"
 
 wl_input_rules = {
     "type:pointer": InputConfig(
@@ -60,11 +60,19 @@ keys = [
     # -------------------------------------------------------------
     Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch Browser"),
+    # Rofi
     Key(
         [mod],
         "space",
-        lazy.spawn("rofi -show run -theme ~/dotfiles/.config/rofi/spotlight-dark.rasi"),
+        lazy.spawn("rofi -show run"),
         desc="Launch Rofi",
+    ),
+    Key(
+        [mod],
+        "v",
+        lazy.spawn(
+            "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' -theme ~/dotfiles/.config/rofi/spotlight-dark.rasi",
+        ),
     ),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -126,7 +134,7 @@ layouts = [
 widget_defaults = dict(
     font=font,
     fontsize=14,
-    padding=3,
+    padding=4,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -141,19 +149,19 @@ widgets = [
     ),
     widget.Spacer(),
     widget.Battery(
-        format="  {watt:.2f} W {percent:2.0%} {char}",
+        format="  {watt:.2f} W  {percent:2.0%} {char}",
         charge_char="󰂄",
         discharge_char="󰁹",
         not_charging_char="󰂄",
         update_interval=2,
     ),
     # widget.StatusNotifier(),
-    widget.Clock(format=" %m-%d %a  %I:%M %p"),
+    widget.Clock(format=" %a, %b %d  %I:%M %p "),
 ]
 
 screens = [
     Screen(
-        wallpaper="/home/eulogio/Downloads/baguio.jpg",
+        wallpaper=wallpaper,
         top=bar.Bar(
             widgets,
             24,
@@ -167,7 +175,9 @@ screens = [
         top=bar.Bar(
             widgets,
             24,
-            background="#101010",
+            opacity=0.95,
+            kadding=20,
+            background="#000000",
         ),
     ),
 ]
