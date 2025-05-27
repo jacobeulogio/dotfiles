@@ -34,6 +34,7 @@ indent-width = 4
 select = ["ALL"]
 ignore = [
     "D",   # Missing 
+    'W',   # Whitespace
     "ANN", # Annotations 
     "INP001", # File is not a package
     "PD901",  # `df` is a bad variable name

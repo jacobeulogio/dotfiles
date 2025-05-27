@@ -94,10 +94,10 @@ hovered = { fg = "#a292a3" }
 cols = 2
 separator = " - "
 separator_style = { fg = "#a6a69c" }
-mask = { bg = "#16161d" }
+mask = { bg = "#101010" }
 rest = { fg = "#a6a69c" }
 cand = { fg = "#8ba4b0" }
-desc = { fg = "#54546d" }
+desc = { fg = "#a6a69c" }
 
 [help]
 on = { fg = "#7aa89f" }
