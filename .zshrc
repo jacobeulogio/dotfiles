@@ -15,10 +15,6 @@ if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   fi
 fi
 
-# POWERLEVEL10K
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Oh my ZSH
@@ -79,7 +75,7 @@ eval "$(zoxide init zsh)"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
-  export EDITOR='nvim'
+  export EDITOR='vim'
 fi
 
 export NVM_DIR="$HOME/.nvm"
