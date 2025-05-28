@@ -23,13 +23,13 @@ widgets = [
     ),
     widget.Spacer(),
     widget.Spacer(length=1),
-    StatusNotifier(icon_theme="Papirus", icon_size=20),
     widget.Net(
         interface="all",
         update_interval=4,
         format="{down:3.1f}{down_suffix:<2}↓",
     ),
-    WiFiIcon(update_interval=5),
+    StatusNotifier(icon_theme="Papirus", icon_size=20),
+    # WiFiIcon(update_interval=5),
     widget.Battery(
         format="{watt:.2f} W  {percent:2.0%} {char}",
         charge_char="󱐋",
