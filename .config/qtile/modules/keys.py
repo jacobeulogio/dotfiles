@@ -37,7 +37,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 ]
 
-groups = [Group(i) for i in "123456"]
+groups = [Group(i) for i in "12345"]
 
 for i in groups:
     keys.extend(

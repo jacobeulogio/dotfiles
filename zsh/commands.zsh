@@ -3,6 +3,7 @@ alias vim="nvim"
 alias cd="z"
 alias tm="tmux new-session -A -s main"
 alias ipython="ipython --no-autoindent"
+alias wifi="nmcli dev wifi"
 
 # Yazi
 function e() {

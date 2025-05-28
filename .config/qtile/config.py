@@ -29,6 +29,7 @@ wl_input_rules = {
 
 layouts = [
     layout.MonadTall(border_width=3, margin=0, border_focus="#3a3a3a"),
+    layout.MonadTall(border_width=3, margin=10, border_focus="#3a3a3a"),
 ]
 
 
