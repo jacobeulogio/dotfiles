@@ -1,11 +1,11 @@
 import os
 import subprocess
 
+from keys import *
 from libqtile import hook, layout
 from libqtile.backend.wayland import InputConfig
 from libqtile.config import Match
-from modules.keys import *
-from modules.screens import *
+from screens import *
 
 
 @hook.subscribe.startup_once
