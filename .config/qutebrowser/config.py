@@ -1,4 +1,4 @@
-import eulogio.draw
+import eulogio_o.draw
 
 # Load existing settings made via :set
 config.load_autoconfig()
