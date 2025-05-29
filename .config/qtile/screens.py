@@ -1,6 +1,6 @@
 from libqtile import bar, qtile, widget
 from libqtile.config import Screen
-from qtile_extras.widget import StatusNotifier, UPowerWidget, WiFiIcon
+from qtile_extras.widget import Bluetooth, StatusNotifier, UPowerWidget, WiFiIcon
 
 font = "SF Pro Text"
 wallpaper = "~/.config/qtile/baguio.jpg"
@@ -20,7 +20,7 @@ def battery():
         return widget.Spacer(length=0)
     if qtile.core.name == "wayland":
         return widget.Battery(
-            format="{watt:.2f} W  {percent:2.0%} {char}",
+            format=" {watt:.2f} W   {percent:2.0%} {char} ",
             charge_char="󱐋",
             discharge_char="",
             not_charging_char="󱐋",
@@ -50,27 +50,28 @@ widgets = [
         # hide_unused=True,
     ),
     sep,
+    widget.TextBox("", fontsize=20),
+    widget.DF(visible_on_warn=False, format=" {uf}{m} | {r:.0f}% "),
     widget.TextBox(" ", fontsize=20),
     widget.Memory(
         measure_mem="G",
-        format="{MemUsed: .1f} /{MemTotal: .1f}{mm}",
+        format="{MemUsed: .1f} |{MemTotal: .1f}{mm}",
         update_interval=4,
     ),
     sep,
-    widget.TextBox("󰍛 ", fontsize=20),
+    widget.TextBox("󰍛 ", fontsize=24),
     widget.CPU(
         format="{load_percent}% ",
         update_interval=2,
     ),
-    sep,
     widget.Spacer(),
+    Bluetooth(default_text="󰂯", fontsize=20),
     widget.Net(
         interface="all",
         update_interval=4,
-        format="  {down:3.1f}{down_suffix:<2}↓",
+        format="  {down:3.1f}{down_suffix:<2}↓ ",
     ),
     StatusNotifier(icon_theme="Papirus", icon_size=28),
-    sep,
     battery(),
     UPowerWidget(border_charge_colour="#dbdbe0"),
     sep,

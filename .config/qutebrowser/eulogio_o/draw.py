@@ -109,7 +109,7 @@ def colors(c, options={}):
     c.colors.hints.bg = "rgba(18, 18, 18, 0.50)"
 
     ## Font color for hints.
-    c.colors.hints.fg = palette["yellow"]
+    c.colors.hints.fg = palette["orange"]
 
     ## Hints
     c.hints.border = "1px solid " + palette["background-alt"]
@@ -247,7 +247,7 @@ def colors(c, options={}):
 
     ## Foreground color of unselected even tabs.
     ## Type: QtColor
-    c.colors.tabs.even.fg = palette["foreground"]
+    c.colors.tabs.even.fg = palette["gray"]
 
     ## Color for the tab indicator on errors.
     ## Type: QtColor
@@ -276,7 +276,7 @@ def colors(c, options={}):
 
     ## Foreground color of unselected odd tabs.
     ## Type: QtColor
-    c.colors.tabs.odd.fg = palette["foreground"]
+    c.colors.tabs.odd.fg = palette["gray"]
 
     # ## Background color of selected even tabs.
     # ## Type: QtColor
@@ -296,5 +296,5 @@ def colors(c, options={}):
 
     ## Tab padding
     c.tabs.padding = padding
-    c.tabs.indicator.width = 1
+    c.tabs.indicator.width = 2
     c.tabs.favicons.scale = 1

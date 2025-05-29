@@ -15,6 +15,17 @@ settings:
       wqa: quit --save
   auto_save.session:
     global: true
+  bindings.key_mappings:
+    global:
+      <Ctrl-6>: <Ctrl-^>
+      <Ctrl-Enter>: <Ctrl-Return>
+      <Ctrl-I>: <Tab>
+      <Ctrl-J>: <Return>
+      <Ctrl-M>: <Return>
+      <Ctrl-[>: <Escape>
+      <Enter>: <Return>
+      <Shift-Enter>: <Return>
+      <Shift-Return>: <Return>
   colors.webpage.darkmode.enabled:
     global: false
   content.blocking.method:
@@ -23,3 +34,9 @@ settings:
     https://chatgpt.com: access-paste
     https://github.com: access-paste
     https://grok.com: access-paste
+  tabs.indicator.padding:
+    global:
+      bottom: 2
+      left: 0
+      right: 6
+      top: 2

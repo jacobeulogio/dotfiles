@@ -7,6 +7,7 @@ alias wifi="nmcli dev wifi"
 alias zyp="sudo zypper"
 alias pac="sudo pacman"
 alias c="clear"
+alias bt="bluetoothctl"
 
 # Yazi
 function e() {
