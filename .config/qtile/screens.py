@@ -1,4 +1,4 @@
-from libqtile import bar, widget
+from libqtile import bar, qtile, widget
 from libqtile.config import Screen
 from qtile_extras.widget import StatusNotifier, UPowerWidget, WiFiIcon
 
@@ -13,6 +13,29 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 sep = widget.Sep(linewidth=2, foreground="000000")
+
+
+def battery():
+    if qtile.core.name == "x11":
+        return widget.Spacer(length=0)
+    if qtile.core.name == "wayland":
+        return widget.Battery(
+            format="{watt:.2f} W  {percent:2.0%} {char}",
+            charge_char="󱐋",
+            discharge_char="",
+            not_charging_char="󱐋",
+            update_interval=4,
+        )
+    return None
+
+
+def systray():
+    if qtile.core.name == "x11":
+        return widget.Systray(icon_size=28)
+    if qtile.core.name == "wayland":
+        return (StatusNotifier(icon_theme="Papirus", icon_size=28),)
+    return None
+
 
 widgets = [
     widget.GroupBox(
@@ -47,14 +70,8 @@ widgets = [
         format="  {down:3.1f}{down_suffix:<2}↓",
     ),
     StatusNotifier(icon_theme="Papirus", icon_size=28),
-    # sep,
-    widget.Battery(
-        format="{watt:.2f} W  {percent:2.0%} {char}",
-        charge_char="󱐋",
-        discharge_char="",
-        not_charging_char="󱐋",
-        update_interval=4,
-    ),
+    sep,
+    battery(),
     UPowerWidget(border_charge_colour="#dbdbe0"),
     sep,
     widget.Clock(fontsize=16, format=" %a, %b %d   %I:%M %p    "),
@@ -68,7 +85,7 @@ screens = [
             30,
             opacity=0.90,
             padding=20,
-            background="#000000",
+            background="#00000090",
         ),
     ),
     Screen(
@@ -78,7 +95,7 @@ screens = [
             30,
             opacity=0.90,
             padding=20,
-            background="#000000",
+            background="#00000090",
         ),
     ),
 ]

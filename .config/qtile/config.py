@@ -2,7 +2,7 @@ import os
 import subprocess
 
 from keys import *
-from libqtile import hook, layout
+from libqtile import hook, layout, qtile
 from libqtile.backend.wayland import InputConfig
 from libqtile.config import Match
 from screens import *
@@ -13,6 +13,11 @@ def autostart():
     home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.run(home, check=False)
 
+
+if qtile.core.name == "x11":
+    term = "urxvt"
+elif qtile.core.name == "wayland":
+    term = "foot"
 
 wl_input_rules = {
     "type:pointer": InputConfig(
