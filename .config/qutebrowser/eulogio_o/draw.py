@@ -17,6 +17,7 @@ def colors(c, options={}):
         "purple": "#a292a3",
         "red": "#e46876",
         "yellow": "#e6c384",
+        "gray": "silver",
     }
 
     spacing = options.get("spacing", {"vertical": 5, "horizontal": 5})
@@ -105,7 +106,7 @@ def colors(c, options={}):
 
     ## Background color for hints. Note that you can use a `rgba(...)` value
     ## for transparency.
-    c.colors.hints.bg = "rgba(18, 18, 18, 0.85)"
+    c.colors.hints.bg = "rgba(18, 18, 18, 0.50)"
 
     ## Font color for hints.
     c.colors.hints.fg = palette["yellow"]
@@ -120,10 +121,10 @@ def colors(c, options={}):
     c.colors.keyhint.bg = palette["background"]
 
     ## Text color for the keyhint widget.
-    c.colors.keyhint.fg = palette["purple"]
+    c.colors.keyhint.fg = palette["gray"]
 
     ## Highlight color for keys to complete the current keychain.
-    c.colors.keyhint.suffix.fg = palette["selection"]
+    c.colors.keyhint.suffix.fg = palette["blue"]
 
     ## Background color of an error message.
     c.colors.messages.error.bg = palette["background"]
