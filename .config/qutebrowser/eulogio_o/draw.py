@@ -105,7 +105,7 @@ def colors(c, options={}):
 
     ## Background color for hints. Note that you can use a `rgba(...)` value
     ## for transparency.
-    c.colors.hints.bg = palette["background"]
+    c.colors.hints.bg = "rgba(18, 18, 18, 0.85)"
 
     ## Font color for hints.
     c.colors.hints.fg = palette["yellow"]

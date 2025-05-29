@@ -25,10 +25,10 @@ config.window_background_opacity = 0.9
 config.window_close_confirmation = "NeverPrompt"
 
 config.window_padding = {
-	left = "0.5cell",
-	right = "0.5cell",
-	top = "25px",
-	bottom = "0px",
+	left = "0.2cell",
+	right = "0.2cell",
+	top = "15px",
+	bottom = "1px",
 }
 
 return config

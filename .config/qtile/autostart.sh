@@ -2,3 +2,4 @@
 
     nm-applet &
     way-displays &
+    picom &

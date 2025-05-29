@@ -33,7 +33,7 @@ def systray():
     if qtile.core.name == "x11":
         return widget.Systray(icon_size=28)
     if qtile.core.name == "wayland":
-        return (StatusNotifier(icon_theme="Papirus", icon_size=28),)
+        return StatusNotifier(icon_theme="Papirus", icon_size=28)
     return None
 
 
@@ -85,17 +85,17 @@ screens = [
             30,
             opacity=0.90,
             padding=20,
-            background="#00000090",
+            background="#000000",
         ),
     ),
     Screen(
         wallpaper=wallpaper,
-        top=bar.Bar(
-            widgets,
-            30,
-            opacity=0.90,
-            padding=20,
-            background="#00000090",
-        ),
+        # top=bar.Bar(
+        #     widgets,
+        #     30,
+        #     opacity=0.90,
+        #     padding=20,
+        #     background="#000000",
+        # ),
     ),
 ]
