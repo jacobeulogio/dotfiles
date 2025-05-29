@@ -58,7 +58,7 @@ source $HOME/zsh/fzf/key-bindings.zsh
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Atuin
-. "$HOME/.atuin/bin/env"
+# . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
 # uv
@@ -73,9 +73,9 @@ eval "$(zoxide init zsh)"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
   export EDITOR='vim'
+else
+  export EDITOR='nvim'
 fi
 
 export NVM_DIR="$HOME/.nvm"

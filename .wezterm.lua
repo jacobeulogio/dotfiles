@@ -1,12 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-local is_windows = wezterm.target_triple:find("windows") ~= nil
-if is_windows then
-	config.default_domain = "WSL:Ubuntu"
-else
-	config.default_domain = "local"
-end
+config.default_domain = "local"
 
 config.initial_cols = 180
 config.initial_rows = 46
@@ -25,7 +20,7 @@ config.colors = {
 
 config.enable_tab_bar = false
 
-config.window_background_opacity = 0.92
+config.window_background_opacity = 0.9
 
 config.window_close_confirmation = "NeverPrompt"
 
