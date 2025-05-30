@@ -79,3 +79,31 @@ for vt in range(1, 8):
             desc=f"Switch to VT{vt}",
         ),
     )
+
+
+def window_to_left(qtile, switch_group=False, switch_screen=False):
+        i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen:
+            qtile.cmd_to_screen(i - 1)
+
+
+def window_to_right(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen:
+            qtile.cmd_to_screen(i + 1)
+
+
+keys.extend(
+    [
+        # Key([mod, "shift"], "comma", lazy.function(window_to_left)),
+        # Key([mod, "shift"], "period", lazy.function(window_to_right)),
+        Key([mod, "shift"], "comma", lazy.function(window_to_left, switch_screen=True)),
+        Key([mod, "shift"], "period", lazy.function(window_to_right, switch_screen=True)),
+    ],
+)
