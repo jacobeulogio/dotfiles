@@ -62,7 +62,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(atuin init zsh)"
 
 # uv
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 
 # Zoxide
