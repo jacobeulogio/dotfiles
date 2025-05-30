@@ -35,8 +35,8 @@ def colors(c, options={}):
     c.completion.height = "35%"
 
     ## Tabs
-    c.tabs.max_width = 200
-    c.tabs.min_width = 200
+    c.tabs.max_width = 180
+    c.tabs.min_width = 180
 
     c.fonts.default_family = "SF Pro Text Thin"
     # c.fonts.default_family = "JetBrains Mono Bold"
