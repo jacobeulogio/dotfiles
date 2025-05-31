@@ -1,5 +1,5 @@
 import traverse
-from libqtile import qtile
+from libqtile import hook, qtile
 from libqtile.config import Click, Drag, Group, Key
 from libqtile.lazy import lazy
 
@@ -21,8 +21,8 @@ keys = [
     # -------------------------------------------------------------
     Key([mod, "control"], "j", lazy.layout.shrink(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # -------------------------------------------------------------
+    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch Browser"),
     Key([mod], "v", lazy.spawn()),
@@ -43,23 +43,29 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set +10%-"), desc="Decrease brightness"),
 ]
 
-groups = [Group(i) for i in "12345"]
 
-for i in groups:
+groups = [
+    Group("1", spawn="wezterm"),
+    Group("2", spawn="qutebrowser"),
+    Group("3"),
+    Group("4"),
+    Group("5"),
+]
+
+for group in groups:
     keys.extend(
         [
-            # mod + group number = switch to group
             Key(
                 [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc=f"Switch to group {i.name}",
+                group.name,
+                lazy.group[group.name].toscreen(),
+                desc=f"Switch to group {group.name}",
             ),
             Key(
                 [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name),
-                desc="move focused window to group {}".format(i.name),
+                group.name,
+                lazy.window.togroup(group.name),
+                desc="move focused window to group {}".format(group.name),
             ),
         ],
     )
@@ -81,8 +87,16 @@ for vt in range(1, 8):
     )
 
 
+def swap_screen(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    if i == 0:
+        qtile.current_group.toscreen(1)
+    else:
+        qtile.current_group.toscreen(0)
+
+
 def window_to_left(qtile, switch_group=False, switch_screen=False):
-        i = qtile.screens.index(qtile.current_screen)
+    i = qtile.screens.index(qtile.current_screen)
     if i != 0:
         group = qtile.screens[i - 1].group.name
         qtile.current_window.togroup(group, switch_group=switch_group)
@@ -101,6 +115,7 @@ def window_to_right(qtile, switch_group=False, switch_screen=False):
 
 keys.extend(
     [
+        Key([mod], "q", lazy.function(swap_screen), desc="Swap with other screen"),
         # Key([mod, "shift"], "comma", lazy.function(window_to_left)),
         # Key([mod, "shift"], "period", lazy.function(window_to_right)),
         Key([mod, "shift"], "comma", lazy.function(window_to_left, switch_screen=True)),

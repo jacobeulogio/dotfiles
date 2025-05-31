@@ -10,8 +10,8 @@ from screens import *
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser("~/.config/qtile/autostart.sh")
-    subprocess.run(home, check=False)
+    autostart = os.path.expanduser("~/.config/qtile/autostart.sh")
+    subprocess.run(autostart, check=False)
 
 
 if qtile.core.name == "x11":
@@ -35,7 +35,7 @@ wl_input_rules = {
 layouts = [
     layout.MonadTall(border_width=3, margin=0, border_focus="#3a3a3a"),
     layout.MonadTall(border_width=3, margin=15, border_focus="#3a3a3a"),
-    layout.MonadThreeCol(border_width=3, margin=15, border_focus="#3a3a3a"),
+    # layout.Bsp(border_width=3, margin=15, border_focus="#3a3a3a"),
 ]
 
 
