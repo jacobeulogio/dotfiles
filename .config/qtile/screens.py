@@ -51,7 +51,7 @@ widgets = [
     ),
     sep,
     widget.TextBox("", fontsize=20),
-    widget.DF(visible_on_warn=False, format=" {uf}{m} | {r:.0f}% "),
+    widget.DF(visible_on_warn=False, format=" {uf}{m} "),
     widget.TextBox(" ", fontsize=20),
     widget.Memory(
         measure_mem="G",
