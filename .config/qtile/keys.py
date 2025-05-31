@@ -1,5 +1,5 @@
 import traverse
-from libqtile import hook, qtile
+from libqtile import qtile
 from libqtile.config import Click, Drag, Group, Key
 from libqtile.lazy import lazy
 
@@ -28,6 +28,7 @@ keys = [
     Key([mod], "v", lazy.spawn()),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "space", lazy.spawn("rofi -show run"), desc="Launch Rofi"),
+    Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc="Screenshot"),
     # -------------------------------------------------------------
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
@@ -116,8 +117,6 @@ def window_to_right(qtile, switch_group=False, switch_screen=False):
 keys.extend(
     [
         Key([mod], "q", lazy.function(swap_screen), desc="Swap with other screen"),
-        # Key([mod, "shift"], "comma", lazy.function(window_to_left)),
-        # Key([mod, "shift"], "period", lazy.function(window_to_right)),
         Key([mod, "shift"], "comma", lazy.function(window_to_left, switch_screen=True)),
         Key([mod, "shift"], "period", lazy.function(window_to_right, switch_screen=True)),
     ],
