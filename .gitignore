@@ -1,3 +1,44 @@
 .stow-local-ignore
-__*
 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg
+*.egg-info/
+*.whl
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Testing
+.pytest_cache/
+coverage/
+*.cover
+*.cov
+.coverage
+.tox/
+
+# Dependency directories
+pip-wheel-metadata/
+wheels/
+lib/
+lib64/
+
+# Miscellaneous
+*.log
+*.cache
+*.swp
+*~
+.DS_Store
