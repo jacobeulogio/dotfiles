@@ -24,7 +24,7 @@ def battery():
             charge_char="󱐋",
             discharge_char="",
             not_charging_char="󱐋",
-            update_interval=4,
+            update_interval=3,
         )
     return None
 
@@ -56,7 +56,7 @@ widgets = [
     widget.Memory(
         measure_mem="G",
         format=" {MemUsed: .1f} |{MemTotal: .1f}{mm} ",
-        update_interval=4,
+        update_interval=2,
     ),
     sep,
     widget.TextBox("󰍛 ", fontsize=24),
@@ -68,7 +68,7 @@ widgets = [
     Bluetooth(default_text="󰂯", fontsize=20),
     widget.Net(
         interface="all",
-        update_interval=4,
+        update_interval=3,
         format="  {down:3.1f}{down_suffix:<2}↓ ",
     ),
     StatusNotifier(icon_theme="Papirus", icon_size=28),
