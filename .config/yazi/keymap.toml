@@ -232,7 +232,11 @@ keymap = [
 	{ on = [
 		"g",
 		"d",
-	], run = "cd ~/dotfiles/", desc = "Go ~/Downloads" },
+	], run = "cd ~/dotfiles", desc = "Go to dotfiles" },
+	{ on = [
+		"g",
+		"D",
+	], run = "cd ~/Downloads", desc = "Go to Downloads" },
 	{ on = [
 		"g",
 		"<Space>",
@@ -241,10 +245,7 @@ keymap = [
 		"g",
 		"f",
 	], run = "follow", desc = "Follow hovered symlink" },
-	{ on = [
-		"g",
-		"P",
-	], run = "cd /mnt/c/Users/jbenitez/projects/", desc = "Go to Projects" },
+	# { on = [ "g", "P", ], run = "cd /mnt/c/Users/jbenitez/projects/", desc = "Go to Projects" },
 	{ on = [
 		"g",
 		"p",

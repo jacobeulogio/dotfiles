@@ -50,8 +50,8 @@ widgets = [
         # hide_unused=True,
     ),
     sep,
-    widget.TextBox("", fontsize=20),
-    widget.DF(visible_on_warn=False, format=" {uf}{m} "),
+    widget.TextBox(" ", fontsize=20),
+    widget.DF(visible_on_warn=False, format="{uf}{m} "),
     widget.TextBox(" ", fontsize=20),
     widget.Memory(
         measure_mem="G",

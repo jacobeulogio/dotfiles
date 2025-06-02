@@ -49,13 +49,22 @@ keys = [
 ]
 
 
-groups = [
-    Group("1", spawn="wezterm"),
-    Group("2", spawn="qutebrowser"),
-    Group("3"),
-    Group("4"),
-    Group("5"),
-]
+if qtile.core.name == "X11":
+    groups = [
+        Group("1", spawn="wezterm"),
+        Group("2", spawn="vivaldi"),
+        Group("3"),
+        Group("4"),
+        Group("5"),
+    ]
+else:
+    groups = [
+        Group("1", spawn="wezterm"),
+        Group("2", spawn="qutebrowser"),
+        Group("3"),
+        Group("4"),
+        Group("5"),
+    ]
 
 for group in groups:
     keys.extend(

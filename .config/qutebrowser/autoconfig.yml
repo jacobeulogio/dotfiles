@@ -44,9 +44,12 @@ settings:
   content.blocking.method:
     global: both
   content.javascript.clipboard:
+    global: access
     https://chatgpt.com: access-paste
     https://github.com: access-paste
     https://grok.com: access-paste
+  content.tls.certificate_errors:
+    global: load-insecurely
   tabs.indicator.padding:
     global:
       bottom: 2
