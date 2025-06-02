@@ -51,11 +51,11 @@ widgets = [
     ),
     sep,
     widget.TextBox(" ", fontsize=20),
-    widget.DF(visible_on_warn=False, format="{uf}{m} "),
+    widget.DF(visible_on_warn=False, format=" {uf}{m}   "),
     widget.TextBox(" ", fontsize=20),
     widget.Memory(
         measure_mem="G",
-        format="{MemUsed: .1f} |{MemTotal: .1f}{mm}",
+        format=" {MemUsed: .1f} |{MemTotal: .1f}{mm} ",
         update_interval=4,
     ),
     sep,

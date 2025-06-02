@@ -48,6 +48,8 @@ settings:
     https://chatgpt.com: access-paste
     https://github.com: access-paste
     https://grok.com: access-paste
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: true
   content.tls.certificate_errors:
     global: load-insecurely
   tabs.indicator.padding:
