@@ -15,7 +15,7 @@ def window_to_left(qtile, switch_group=False, switch_screen=False):
 
     i = qtile.screens.index(qtile.current_screen)
     leftest_point = current_screen.info()["x"]
-    if current_window["x"] > leftest_point:
+    if current_window.info()["x"] > leftest_point:
         qtile.current_layout.shuffle_left()
 
     elif i + 1 != 0:

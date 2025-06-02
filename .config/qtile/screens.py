@@ -31,9 +31,9 @@ def battery():
 
 def systray():
     if qtile.core.name == "x11":
-        return widget.Systray(icon_size=28)
+        return widget.Systray(icon_size=24)
     if qtile.core.name == "wayland":
-        return StatusNotifier(icon_theme="Papirus", icon_size=28)
+        return StatusNotifier(icon_theme="Papirus", icon_size=24)
     return None
 
 
@@ -50,16 +50,16 @@ widgets = [
         # hide_unused=True,
     ),
     sep,
-    widget.TextBox(" ", fontsize=20),
-    widget.DF(visible_on_warn=False, format=" {uf}{m}   "),
-    widget.TextBox(" ", fontsize=20),
+    widget.TextBox(" ", fontsize=20, foreground="#6a6a6a"),
+    widget.DF(visible_on_warn=False, format=" {uf}{m} | {s}{m}   "),
+    widget.TextBox(" ", fontsize=18, foreground="#6a6a6a"),
     widget.Memory(
         measure_mem="G",
-        format=" {MemUsed: .1f} |{MemTotal: .1f}{mm} ",
+        format="{MemUsed: .1f} |{MemTotal: .1f}{mm} ",
         update_interval=2,
     ),
     sep,
-    widget.TextBox("󰍛 ", fontsize=24),
+    widget.TextBox("󰍛 ", fontsize=20, foreground="#6a6a6a"),
     widget.CPU(
         format="{load_percent}% ",
         update_interval=2,
