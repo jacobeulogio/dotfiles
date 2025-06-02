@@ -7,9 +7,15 @@ def swap_screen(qtile):
 
 
 def window_to_left(qtile, switch_group=False, switch_screen=False):
+    current_screen = qtile.current_screen
+    current_window = qtile.current_window
+
+    if current_window is None:
+        return
+
     i = qtile.screens.index(qtile.current_screen)
-    leftest_point = qtile.current_screen.info()["x"]
-    if qtile.current_window.get_position()[0] > leftest_point:
+    leftest_point = current_screen.info()["x"]
+    if current_window["x"] > leftest_point:
         qtile.current_layout.shuffle_left()
 
     elif i + 1 != 0:
@@ -36,7 +42,7 @@ def window_to_right(qtile, switch_group=False, switch_screen=False):
 
     window_info = current_window.info()
     screen_info = current_screen.info()
-    right_edge = window_info["x"] + screen_info["width"]
+    right_edge = screen_info["x"] + screen_info["width"]
 
     if window_info["x"] + window_info["width"] < right_edge - 60:
         qtile.current_layout.shuffle_right()
