@@ -59,8 +59,8 @@ if qtile.core.name == "X11":
     ]
 else:
     groups = [
-        Group("1", spawn="wezterm"),
-        Group("2", spawn="qutebrowser"),
+        Group("1", spawn="wezterm", exclusive=False),
+        Group("2", spawn="qutebrowser", exclusive=False),
         Group("3"),
         Group("4"),
         Group("5"),
