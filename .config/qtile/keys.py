@@ -29,7 +29,7 @@ keys = [
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch Browser"),
-    Key([mod], "v", lazy.spawn()),
+    Key([mod], "v", lazy.spawn("cliphist list | rofi -dmenu | cliphist decode | wl-copy")),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "space", lazy.spawn("rofi -show run"), desc="Launch Rofi"),
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc="Screenshot"),

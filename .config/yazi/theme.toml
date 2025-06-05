@@ -1,8 +1,8 @@
 [flavor]
-dark  = "kanagawa-dragon"
+dark  = "kanagawa-e"
 light = ""
 
-[Manager]
+[mgr]
 
 border_symbol = "│"
 border_style = { fg = "#272728" }
