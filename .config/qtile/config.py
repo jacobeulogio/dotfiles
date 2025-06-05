@@ -14,11 +14,6 @@ def autostart():
     subprocess.run(autostart, check=False)
 
 
-if qtile.core.name == "x11":
-    term = "urxvt"
-elif qtile.core.name == "wayland":
-    term = "foot"
-
 wl_input_rules = {
     "type:pointer": InputConfig(
         natural_scroll=False,
