@@ -12,6 +12,6 @@ document.addEventListener('load', () => {
     }
     const ad = [...document.querySelectorAll('.ad-showing')][0];
     if (ad) {
-        document.querySelector('video').currentTime = 9999999999;
+        document.querySelector('video').currentTime = 14;
     }
 }, true);fd

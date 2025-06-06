@@ -19,6 +19,8 @@ settings:
     global:
       normal:
         <Ctrl+Shift+m>: spawn mpv {url}
+        <Ctrl+h>: tab-prev
+        <Ctrl+l>: tab-next
         J: tab-prev
         K: tab-next
         M: hint links spawn mpv {hint-url}
