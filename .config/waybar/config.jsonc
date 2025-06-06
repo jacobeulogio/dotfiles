@@ -63,7 +63,7 @@
         "spacing": 4
     },
     "clock": {
-        "format": "{:%a ,  %b  %d   %H:%M %p  }",
+        "format": "{:%a ,  %b  %d   %H:%M  }",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1,
     },
