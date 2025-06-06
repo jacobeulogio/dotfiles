@@ -12,7 +12,6 @@
     ],
     "modules-center": [],
     "modules-right": [
-        // "custom/bluetooth",
         "network",
         "tray",
         "battery",
@@ -60,10 +59,11 @@
         "on-click": "nm-applet"
     },
     "tray": {
-        "spacing": 4
+        "icon-size": 16,
+        "spacing": 16
     },
     "clock": {
-        "format": "{:%a ,  %b  %d   %H:%M  }",
+        "format": "{:%a ,  %b  %d      %H:%M     }",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1,
     },
@@ -73,7 +73,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": " {power:0.1f}W     {capacity}%  {icon}",
+        "format": "{power:0.1f}W     {capacity}%  {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-icons": ["", "", "", "", ""]
