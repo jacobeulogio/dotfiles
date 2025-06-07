@@ -34,7 +34,7 @@ window#waybar {
 
 #workspaces button.visible {
     background: transparent;
-    border-bottom: 2px solid silver;
+    border-bottom: 2px solid #8a8a8a;
 }
 
 #workspaces button.empty {
