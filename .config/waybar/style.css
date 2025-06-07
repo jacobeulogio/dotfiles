@@ -29,22 +29,17 @@ window#waybar {
 
 #workspaces button.active {
     background: transparent;
-    border-bottom: 3px solid silver;
+    color: silver;
 }
 
-/* #workspaces button.visible { */
-/*     background: transparent; */
-/*     border-bottom: 1px solid silver; */
-/* } */
+#workspaces button.visible {
+    background: transparent;
+    border-bottom: 2px solid silver;
+}
 
 #workspaces button.empty {
   color: #4e4e4e;         /* gray text */
 }
-
-/* #workspaces button.focused { */
-/*     background: #64727D; */
-/*     border-bottom: 1px solid #ffffff; */
-/* } */
 
 #cpu,
 #memory,
