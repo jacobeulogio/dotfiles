@@ -18,6 +18,7 @@ window#waybar {
 
 #workspaces {
   padding: 0 10px 0 0 ;
+  color: #4e4e4e;         /* gray text */
 }
 
 #workspaces button {
@@ -25,6 +26,7 @@ window#waybar {
     margin: 0 2px;
     background: transparent;
     border-bottom: 3px solid transparent;
+    color: #4e4e4e;         /* gray text */
 }
 
 #workspaces button.active {
@@ -85,7 +87,7 @@ window#waybar {
 #backlight-slider trough,
 #pulseaudio-slider trough {
   margin-top: -3px;
-  min-width: 90px;
+  min-width: 80px;
   min-height: 8px;
   margin-bottom: -4px;
   border-radius: 8px;

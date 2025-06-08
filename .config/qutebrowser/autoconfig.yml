@@ -56,6 +56,8 @@ settings:
     https://mail.google.com?extsrc=mailto&url=%25s: true
   content.tls.certificate_errors:
     global: load-insecurely
+  downloads.position:
+    global: bottom
   tabs.indicator.padding:
     global:
       bottom: 2

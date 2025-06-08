@@ -40,7 +40,8 @@
                 "portable": "",
                 "car": "",
              "default": ["", "", ""]
-            }
+            },
+           "on-click": "pavucontrol"
         },
 
   "pulseaudio/slider": {
@@ -123,7 +124,7 @@
     },
 
     "clock": {
-        "format": "{:%a ,  %b  %d      %H:%M   }",
+        "format": "{:%a ,  %b  %d     %H:%M  }",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1,
     },
@@ -136,7 +137,7 @@
         },
         "format": "{power:0.1f}W     {capacity}%  {icon}",
         "format-charging": "{power:0.1f}W     {capacity}%  󱐋  {icon}",
-        "format-plugged": "{power:0.1f}W     {capacity}%  󱐋",
+        "format-plugged": "{power:0.1f}W     {capacity}%  󱐋  {icon}",
         "format-icons": ["","","","","","","",""]  
     },
 }
