@@ -61,8 +61,8 @@ window#waybar {
 }
 
 #custom-disk_icon {
-  font-size: 17px; /* Changed to 18px */
-  margin: 1px 0 0 16px ;
+  font-size: 20px; /* Changed to 18px */
+  margin: 0 0 0 16px ;
 }
 
 

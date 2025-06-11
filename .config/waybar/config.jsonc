@@ -77,17 +77,17 @@
      },
 
     "custom/disk_icon": {
-        "format": " ",
+        "format": "󱘲 ",
         "tooltip": false,
     },
 
     "custom/memory_icon": {
-        "format": " ",
+        "format": " ",
         "tooltip": false
     },
 
     "custom/cpu_icon": {
-        "format": "󰍛 ",
+        "format": " ",
         "tooltip": false
     },
 
