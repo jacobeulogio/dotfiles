@@ -15,6 +15,13 @@ window#waybar {
   color: #b2b2b2;
 }
 
+#clock,
+#battery,
+#network,
+#tray,
+#window {
+  margin: 0 12;
+}
 
 #workspaces {
   padding: 0 10px 0 0 ;
@@ -58,13 +65,6 @@ window#waybar {
   margin: 1px 0 0 16px ;
 }
 
-#clock,
-#battery,
-#network,
-#tray,
-#window {
-  margin: 0 10px;
-}
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
@@ -76,6 +76,10 @@ window#waybar {
   margin-right: 0;
 }
 
+#backlight,
+#pulseaudio {
+  margin-left: 12px;
+}
 #backlight-slider slider,
 #pulseaudio-slider slider {
   background: #A1BDCE;

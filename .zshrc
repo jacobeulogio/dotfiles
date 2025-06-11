@@ -1,5 +1,3 @@
-# zmodload zsh/zprof
-
 # Tmux 
 if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   if tmux list-clients -F '#S' | grep "main" 2>/dev/null; then
@@ -55,9 +53,6 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # fzf 
 source $HOME/zsh/fzf/completion.zsh
 source $HOME/zsh/fzf/key-bindings.zsh
-
-# Brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Atuin
 # . "$HOME/.atuin/bin/env"

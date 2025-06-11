@@ -109,7 +109,7 @@
 
     "cpu": {
         "interval": 5,
-        "format": "{usage}%"
+        "format": "{avg_frequency} GHz | {usage}%"
     },
 
     "network": {
@@ -119,12 +119,12 @@
     },
 
     "tray": {
-        "icon-size": 16,
-        "spacing": 16
+        "icon-size": 15,
+        "spacing": 15
     },
 
     "clock": {
-        "format": "{:%a ,  %b  %d     %H:%M  }",
+        "format": "{:%a, %b %d   %H:%M  }",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1,
     },
@@ -135,9 +135,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{power:0.1f}W     {capacity}%  {icon}",
-        "format-charging": "{power:0.1f}W     {capacity}%  󱐋  {icon}",
-        "format-plugged": "{power:0.1f}W     {capacity}%  󱐋  {icon}",
+        "format": "{power:0.1f}W   {capacity}%  {icon}",
+        "format-charging": "{power:0.1f}W   {capacity}%  󱐋 {icon}",
+        "format-plugged": "{power:0.1f}W   {capacity}%  󱐋 {icon}",
         "format-icons": ["","","","","","","",""]  
     },
 }
