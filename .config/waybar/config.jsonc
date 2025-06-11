@@ -136,8 +136,8 @@
             "critical": 15
         },
         "format": "{power:0.1f}W   {capacity}%  {icon}",
-        "format-charging": "{power:0.1f}W   {capacity}%  󱐋 {icon}",
-        "format-plugged": "{power:0.1f}W   {capacity}%  󱐋 {icon}",
+        "format-charging": "{power:0.1f}W   {capacity}% 󱐋 {icon}",
+        "format-plugged": "{power:0.1f}W   {capacity}% 󱐋 {icon}",
         "format-icons": ["","","","","","","",""]  
     },
 }

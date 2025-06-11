@@ -8,7 +8,7 @@
 document.addEventListener('load', () => {
     const ad = [...document.querySelectorAll('.ad-showing')][0];
     if (ad) {
-        document.querySelector('video').currentTime = 14;
+        document.querySelector('video').currentTime = 29;
     }
     const btn = document.querySelector('.videoAdUiSkipButton,.ytp-ad-skip-button-modern')
     if (btn) {
