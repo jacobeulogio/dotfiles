@@ -26,19 +26,21 @@ window#waybar {
 #workspaces {
   padding: 0 10px 0 0 ;
   color: #4e4e4e;         /* gray text */
+
 }
 
 #workspaces button {
     padding: 0 4px;
     margin: 0 2px;
-    background: transparent;
-    border-bottom: 3px solid transparent;
+    /* background: transparent; */
+    /* border-bottom: 3px solid transparent; */
     color: #4e4e4e;         /* gray text */
 }
 
 #workspaces button.active {
-    background: transparent;
     color: silver;
+    background-color: #3b4252;
+    
 }
 
 #workspaces button.visible {
@@ -47,7 +49,7 @@ window#waybar {
 }
 
 #workspaces button.empty {
-  color: #4e4e4e;         /* gray text */
+  background: transparent;         /* gray text */
 }
 
 #cpu,
