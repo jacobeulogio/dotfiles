@@ -35,7 +35,7 @@ window#waybar {
 
 #workspaces button {
     padding: 0 4px;
-    margin: 1px 3px;
+    margin: 2px 2px;
     border-bottom: 2px solid rgba(100,100,100,.9);
     /* background: rgba(50, 50, 50, 0.50); */
     color: #4e4e4e;         
@@ -47,7 +47,7 @@ window#waybar {
 }
 
 #workspaces button.visible {
-    border-bottom: 2px solid rgba(150,170,200,.9);
+    border-bottom: 2px solid silver;
 }
 
 
