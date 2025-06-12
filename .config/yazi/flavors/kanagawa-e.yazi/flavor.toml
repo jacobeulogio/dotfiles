@@ -32,16 +32,16 @@ preview_hovered = { reversed = true }
 find_keyword = { fg = "#e46876", bg = "#181616" }
 find_position = {}
 
-tab_active = { reversed = true }
-tab_inactive = {}
-tab_width = 1
-
 count_copied = { fg = "#181616", bg = "#8a9a7b" }
 count_cut = { fg = "#181616", bg = "#e46876" }
 count_selected = { fg = "#181616", bg = "#e6c384" }
 
 border_symbol = "│"
 border_style = { fg = "#272727" }
+
+[tabs]
+active = { reversed = true }
+inactive = { bg = "#101010" }
 
 
 [mode]
