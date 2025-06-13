@@ -7,7 +7,8 @@
         "custom/memory_icon",
         "memory",
         "custom/cpu_icon",
-        "cpu"
+        "cpu",
+        "temperature"
     ],
 
     "modules-center": [
@@ -22,9 +23,15 @@
         "network",
         "tray",
         "battery",
-        // "upower",
         "clock"
     ],
+
+	"temperature": {
+		"hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+		"input-filename": "temp1_input",
+		"format": "  {temperatureC}°C",
+		"critical-threshold": 80
+	},
 
     "pulseaudio": {
             "format": "{icon}",
