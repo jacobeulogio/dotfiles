@@ -36,8 +36,7 @@ window#waybar {
 #workspaces button {
     padding: 0 4px;
     margin: 2px 2px;
-    border-bottom: 2px solid rgba(100,100,100,.9);
-    /* background: rgba(50, 50, 50, 0.50); */
+    /* border-bottom: 2px solid rgba(100,100,100,.9); */
     color: #4e4e4e;         
     transition: all 0.2s ease;
 }
@@ -46,16 +45,23 @@ window#waybar {
     color: silver;
 }
 
+#workspaces button:not(.active) {
+  color: #4e4e4e;         
+}
+
 #workspaces button.visible {
     border-bottom: 2px solid silver;
 }
 
 
-#workspaces button.empty {
-  color: #4e4e4e;         
-  background: transparent;
-  border-bottom: 2px solid transparent;
+#workspaces button:not(.empty):not(.visible) {
+  border-bottom: 2px solid rgba(100,100,100,.9);
 }
+
+/* #workspaces button.empty { */
+/*   background: transparent; */
+/*   border-bottom: 2px solid transparent; */
+/* } */
 
 #cpu,
 #memory,
