@@ -6,7 +6,7 @@ alias ipython="ipython --no-autoindent"
 alias wifi="nmcli dev wifi"
 alias zyp="sudo zypper"
 alias pac="sudo pacman"
-alias c="clear"
+alias cl="clear"
 alias bt="bluetoothctl"
 
 # Yazi
