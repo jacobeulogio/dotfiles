@@ -15,6 +15,9 @@ if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   fi
 fi
 
+# Vim Keybinds
+# bindkey -v
+
 source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Oh my ZSH
@@ -84,7 +87,6 @@ fi
 # HISTFILE=~/.histfile
 # HISTSIZE=1000
 # SAVEHIST=1000
-bindkey -v
 # End of lines configured by zsh-newuser-install
 # ----------------------------------------------------------
 
