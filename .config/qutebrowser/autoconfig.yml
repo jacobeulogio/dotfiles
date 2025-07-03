@@ -64,3 +64,8 @@ settings:
       left: 0
       right: 6
       top: 2
+  url.searchengines:
+    global:
+      DEFAULT: https://www.google.com/search?hl=en&q={}
+  url.start_pages:
+    global: https://www.google.com
