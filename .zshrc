@@ -15,8 +15,8 @@ if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   fi
 fi
 
-# Vim Keybinds
-# bindkey -v
+# Add scripts folder to path
+export PATH=/home/eulogio/scripts:$PATH
 
 source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
