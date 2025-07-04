@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+CURRENT_SESSION=$(tmux display-message -p '#S')
+CURRENT_WINDOW=$(tmux display-message -p '#I')
+TMP_FILE="/tmp/eulogio_prev_session.txt"
+
+if [[ $CURRENT_SESSION -eq 99 ]]; then
+    PREVIOUS_SESSION=$(cat $TMP_FILE)
+    tmux move-window -t $PREVIOUS_SESSION
+    hyprctl dispatch killactive
+    hyprctl dispatch focusmonitor +1
+else 
+    echo "$CURRENT_SESSION" > $TMP_FILE
+    hyprctl dispatch focusmonitor +1 
+    hyprctl dispatch focusworkspaceoncurrentmonitor empty  
+    wezterm start -- tmux new-session -As 99 
+    tmux move-window -s $CURRENT_SESSION:$CURRENT_WINDOW -t 99:
+fi
+
+
+
