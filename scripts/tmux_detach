@@ -2,19 +2,36 @@
 
 CURRENT_SESSION=$(tmux display-message -p '#S')
 CURRENT_WINDOW=$(tmux display-message -p '#I')
-TMP_FILE="/tmp/eulogio_prev_session.txt"
 
-if [[ $CURRENT_SESSION -eq 99 ]]; then
-    PREVIOUS_SESSION=$(cat $TMP_FILE)
+
+if [[ $CURRENT_SESSION -gt 99 ]]; then
+    PREVIOUS_SESSION=$(cat /tmp/prev_session_$CURRENT_SESSION.txt)
     tmux move-window -t $PREVIOUS_SESSION
     hyprctl dispatch killactive
     hyprctl dispatch focusmonitor +1
+    
 else 
+    i=100
+    while [[ $i -lt 1000 ]]; do
+      if ! tmux list-clients -F '#S' | grep "$i" ; then
+        TMP_FILE="/tmp/prev_session_$i.txt"
+        tmux new-session -A -s "$i"
+        break
+      else 
+        ((i++))
+      fi
+    done
+    
+    # Echo current session to tmp file for re-attachment later
     echo "$CURRENT_SESSION" > $TMP_FILE
+
+    # Go to next monitor and create a new terminal instance start tmux
     hyprctl dispatch focusmonitor +1 
     hyprctl dispatch focusworkspaceoncurrentmonitor empty  
-    wezterm start -- tmux new-session -As 99 
-    tmux move-window -s $CURRENT_SESSION:$CURRENT_WINDOW -t 99:
+    sleep 0.1
+
+    # Move current window to new terminal instance
+    wezterm start -- tmux new-session -As $i && tmux move-window -s $CURRENT_SESSION:$CURRENT_WINDOW -t $i:
 fi
 
 

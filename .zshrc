@@ -22,7 +22,7 @@ source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Oh my ZSH
 export ZSH="$HOME/zsh/oh-my-zsh"
-[[ -z "${plugins[*]}" ]] && plugins=(git fzf extract)
+[[ -z "${plugins[*]}" ]] && plugins=(git fzf)
 source $ZSH/oh-my-zsh.sh
 
 # Original file location for plugins are in /usr/share/zsh
