@@ -1,38 +1,45 @@
 #!/usr/bin/env bash
 
+# Debugging (uncomment to log)
+# exec 3>&1
+# exec >> "/tmp/tmux_hypr.log" 2>&1
+# echo "[$(date)] Script started" >&3
+
 CURRENT_SESSION=$(tmux display-message -p '#S')
 CURRENT_WINDOW=$(tmux display-message -p '#I')
+CURRENT_WORKSPACE=$(hyprctl monitors | \
+    awk -v RS='' '/focused: no/ && /Monitor/ {for(i=1; i<=NF; i++) if ($i == "active") print $(i+2); exit}')
 
+TMP_DIR="${XDG_RUNTIME_DIR:-$HOME/.cache}/tmux_hypr"
+mkdir -p "$TMP_DIR"
 
-if [[ $CURRENT_SESSION -gt 99 ]]; then
-    PREVIOUS_SESSION=$(cat /tmp/prev_session_$CURRENT_SESSION.txt)
-    tmux move-window -t $PREVIOUS_SESSION
-    hyprctl dispatch killactive
-    hyprctl dispatch focusmonitor +1
-    
-else 
+if [[ $CURRENT_SESSION =~ ^[0-9]+$ ]] && (( CURRENT_SESSION > 99 )); then
+    TMP_FILE="$TMP_DIR/prev_session_$CURRENT_SESSION.txt"
+    if [[ -f "$TMP_FILE" ]]; then
+        read -r PREVIOUS_SESSION PREVIOUS_WORKSPACE < "$TMP_FILE"
+        tmux move-window -s "$CURRENT_SESSION:$CURRENT_WINDOW" -t "$PREVIOUS_SESSION:"
+        tmux kill-session -t 
+        hyprctl dispatch killactive
+        hyprctl dispatch focusworkspaceoncurrentmonitor "$PREVIOUS_WORKSPACE"
+        hyprctl dispatch focusmonitor +1
+    else
+        notify-send "Error: No previous session found for $CURRENT_SESSION"
+        exit 1
+    fi
+else
     i=100
-    while [[ $i -lt 1000 ]]; do
-      if ! tmux list-clients -F '#S' | grep "$i" ; then
-        TMP_FILE="/tmp/prev_session_$i.txt"
-        tmux new-session -A -s "$i"
-        break
-      else 
+    while (( i < 1000 )); do
+        if ! tmux list-sessions -F '#S' | grep -q "^$i$"; then
+            TMP_FILE="$TMP_DIR/prev_session_${i}.txt"
+            echo "$CURRENT_SESSION $CURRENT_WORKSPACE" > "$TMP_FILE"
+            tmux new-session -d -s "$i"  
+            hyprctl dispatch focusmonitor +1
+            hyprctl dispatch focusworkspaceoncurrentmonitor empty
+            wezterm start -- tmux attach -t "$i" 
+            tmux move-window -s "$CURRENT_SESSION:$CURRENT_WINDOW" -t "$i:"
+            tmux kill-window -t "$i:1"
+            break
+        fi
         ((i++))
-      fi
     done
-    
-    # Echo current session to tmp file for re-attachment later
-    echo "$CURRENT_SESSION" > $TMP_FILE
-
-    # Go to next monitor and create a new terminal instance start tmux
-    hyprctl dispatch focusmonitor +1 
-    hyprctl dispatch focusworkspaceoncurrentmonitor empty  
-    sleep 0.1
-
-    # Move current window to new terminal instance
-    wezterm start -- tmux new-session -As $i && tmux move-window -s $CURRENT_SESSION:$CURRENT_WINDOW -t $i:
 fi
-
-
-
