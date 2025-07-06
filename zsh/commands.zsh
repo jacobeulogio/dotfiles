@@ -6,6 +6,8 @@ alias zyp="sudo zypper"
 alias pac="sudo pacman"
 alias cl="clear"
 alias bt="bluetoothctl"
+alias update="sudo nixos-rebuild switch --flake ~/nixos#eulogio --upgrade"
+alias gem="npx https://github.com/google-gemini/gemini-cli"
 
 # Yazi
 function e() {
