@@ -28,8 +28,11 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Envionment Vars
 export EDITOR='nvim'
 export PATH=/home/eulogio/scripts:$PATH                             # Add scripts folder to path
+export PATH=/home/eulogio/work-scripts:$PATH                        # Add work-scripts folder to path
+export GOOGLE_CLOUD_PROJECT="dashboard-441809"
 
 DISABLE_MAGIC_FUNCTIONS="true"
 ENABLE_CORRECTION="true"

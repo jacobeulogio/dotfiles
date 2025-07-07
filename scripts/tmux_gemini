@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 tmux new-window -c $(fd --type d . ~ | fzf --tmux) \
-"npx https://github.com/google-gemini/gemini-cli"
+"source ~/.zshrc && npx https://github.com/google-gemini/gemini-cli"
