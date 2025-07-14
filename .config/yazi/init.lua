@@ -2,7 +2,7 @@
 require("githead"):setup({
 	show_branch = true,
 	branch_prefix = "on",
-	branch_color = "green",
+	branch_color = "#808080",
 	branch_symbol = "",
 	branch_borders = "",
 
