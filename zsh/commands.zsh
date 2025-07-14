@@ -8,6 +8,7 @@ alias cl="clear"
 alias bt="bluetoothctl"
 alias update="sudo nixos-rebuild switch --flake ~/nixos#eulogio --upgrade"
 alias gem="gemini"
+alias refresh_fonts="rm -rf /home/eulogio/.local/share/fonts/fonts && ln -s /run/current-system/sw/share/X11/fonts ~/.local/share/fonts"
 
 # Yazi
 function e() {

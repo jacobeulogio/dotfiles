@@ -8,7 +8,7 @@ config.initial_rows = 46
 
 config.font_size = 13
 
-config.font = wezterm.font("CommitMono Nerd Font Mono")
+config.font = wezterm.font("CommitMono Nerd Font")
 
 config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.colors = {
@@ -27,8 +27,8 @@ config.window_close_confirmation = "NeverPrompt"
 config.window_padding = {
 	left = "0.2cell",
 	right = "0.2cell",
-	top = "8px",
-	bottom = "1px",
+	top = "3px",
+	bottom = "0px",
 }
 
 return config
