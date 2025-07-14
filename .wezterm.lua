@@ -8,7 +8,7 @@ config.initial_rows = 46
 
 config.font_size = 13
 
-config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("CommitMono Nerd Font Mono")
 
 config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.colors = {
