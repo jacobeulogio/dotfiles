@@ -8,10 +8,11 @@ config.initial_rows = 46
 
 config.font_size = 13
 
--- wezterm.font("BlexMono Nerd Font Mono")
-
+-- config.font = wezterm.font("Cousine Nerd Font Mono")
+config.font = wezterm.font("GeistMono Nerd Font Mono")
+-- config.font = wezterm.font("CommitMono Nerd Font")
 -- config.font = wezterm.font("Hack Nerd Font Mono")
-config.font = wezterm.font("JetBrainsMono Nerd Font", {weight="Light", stretch="Normal", style="Normal"})
+-- config.font = wezterm.font("JetBrainsMono Nerd Font", {weight="Light", stretch="Normal", style="Normal"})
 
 config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.colors = {
