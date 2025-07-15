@@ -28,7 +28,7 @@ config.window_padding = {
 	left = "0.2cell",
 	right = "0.2cell",
 	top = "3px",
-	bottom = "0px",
+	bottom = "1px",
 }
 
 return config
