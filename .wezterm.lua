@@ -10,6 +10,9 @@ config.font_size = 13
 
 -- wezterm.font("BlexMono Nerd Font Mono")
 
+-- config.font = wezterm.font("Hack Nerd Font Mono")
+config.font = wezterm.font("JetBrainsMono Nerd Font", {weight="Light", stretch="Normal", style="Normal"})
+
 config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.colors = {
 	background = "black",
@@ -27,7 +30,7 @@ config.window_close_confirmation = "NeverPrompt"
 config.window_padding = {
 	left = "0.2cell",
 	right = "0.2cell",
-	top = "3px",
+	top = "8px",
 	bottom = "1px",
 }
 
