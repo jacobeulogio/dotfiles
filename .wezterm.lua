@@ -8,7 +8,7 @@ config.initial_rows = 46
 
 config.font_size = 13
 
-wezterm.font("BlexMono Nerd Font Mono", {weight="Regular", stretch="Normal", style="Normal"})
+-- wezterm.font("BlexMono Nerd Font Mono")
 
 config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.colors = {
