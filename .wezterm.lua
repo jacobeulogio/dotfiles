@@ -6,7 +6,7 @@ config.default_domain = "local"
 config.initial_cols = 180
 config.initial_rows = 46
 
-config.font_size = 14
+config.font_size = 13
 
 config.font = wezterm.font("GeistMono Nerd Font Mono", {weight='Regular'})
 -- config.font = wezterm.font("JetBrainsMono Nerd Font", {weight="Light", stretch="Normal", style="Normal"})
