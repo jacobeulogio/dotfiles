@@ -1,0 +1,56 @@
+[
+    {
+        "output": "DP-2",
+        "position": "top",
+        "height": 32,
+        "modules-left": [
+            "custom/disk_icon",
+            "disk",
+            "custom/memory_icon",
+            "memory",
+            "custom/cpu_icon",
+            "cpu",
+            "temperature"
+        ],
+        "modules-center": [
+            "hyprland/workspaces"
+        ],
+        "modules-right": [
+            "pulseaudio",
+            "pulseaudio/slider",
+            "network",
+            "tray",
+            "clock"
+        ],
+        "include": [
+            "~/.config/waybar/modules.jsonc"
+        ]
+    },
+    {
+        "output": "HDMI-A-2",
+        "position": "top",
+        "height": 32,
+        "modules-left": [
+            "custom/disk_icon",
+            "disk",
+            "custom/memory_icon",
+            "memory",
+            "custom/cpu_icon",
+            "cpu",
+            "temperature"
+        ],
+        "modules-center": [
+            "hyprland/workspaces"
+        ],
+        "modules-right": [
+            "pulseaudio",
+            "pulseaudio/slider",
+            "network",
+            "tray",
+            "clock"
+        ],
+        "include": [
+            "~/.config/waybar/modules.jsonc"
+        ]
+    }
+]
