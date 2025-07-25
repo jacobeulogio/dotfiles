@@ -6,11 +6,16 @@ alias zyp="sudo zypper"
 alias pac="sudo pacman"
 alias cl="clear"
 alias bt="bluetoothctl"
-alias update="sudo nixos-rebuild switch --flake ~/nixos#eulogio --upgrade"
+# alias update="sudo nixos-rebuild switch --flake ~/nixos#eulogio --upgrade"
 alias gem="gemini"
 alias refresh_fonts="rm -rf ~/.local/share/fonts/fonts && ln -s /run/current-system/sw/share/X11/fonts ~/.local/share/fonts"
 alias cd="z"
 alias ruff_init="cp ~/dotfiles/.ruff.toml ."
+
+function update() {
+  local profile=${1:-eulogio}
+  sudo nixos-rebuild switch --flake ~/nixos#$profile --upgrade
+}
 
 # Yazi
 function e() {
