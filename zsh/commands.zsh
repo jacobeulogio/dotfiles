@@ -5,6 +5,9 @@ alias cl="clear"
 alias refresh_fonts="rm -rf ~/.local/share/fonts/fonts && ln -s /run/current-system/sw/share/X11/fonts ~/.local/share/fonts"
 alias cd="z"
 alias ruff_init="cp ~/dotfiles/.ruff.toml ."
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
 
 function update() {
   local profile=${1:-eulogio}
