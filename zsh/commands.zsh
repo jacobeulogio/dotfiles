@@ -14,6 +14,9 @@ alias ruff_init="cp ~/dotfiles/.ruff.toml ."
 
 function update() {
   local profile=${1:-eulogio}
+
+  cd ~/nixos
+  sudo nix flake update && /
   sudo nixos-rebuild switch --flake ~/nixos#$profile --upgrade
 }
 
