@@ -10,11 +10,21 @@ alias gc="git commit"
 alias gp="git push"
 
 function update() {
-  local profile=${1:-eulogio}
+  local HOST_FILE="${XDG_RUNTIME_DIR:-$HOME}/nix_host"
+  local host=${1:-$(cat "$HOST_FILE" 2>/dev/null)}
 
-  cd ~/nixos
-  sudo nix flake update && /
-  sudo nixos-rebuild switch --flake ~/nixos#$profile --upgrade
+  if [[ -z "$host" ]]; then
+    read 'host?Set default host: ' || return 1
+    echo "$host" > "$HOST_FILE"
+  fi
+
+  (
+    set -e # Exit subshell immediately if a command fails
+    cd ~/nixos
+    echo "Updating host: $host"
+    sudo nix flake update
+    sudo nixos-rebuild switch --flake ".#$host" --upgrade
+  ) && echo "Update successful." || echo "Update failed."
 }
 
 # Yazi
