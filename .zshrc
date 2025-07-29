@@ -18,6 +18,8 @@ fi
 autoload -Uz compinit
 compinit
 
+bindkey -e
+
 # Oh my ZSH
 # export ZSH="$HOME/zsh/oh-my-zsh"
 # [[ -z "${plugins[*]}" ]] && plugins=(git)
