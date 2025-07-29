@@ -21,9 +21,9 @@ compinit
 bindkey -e
 
 # Oh my ZSH
-# export ZSH="$HOME/zsh/oh-my-zsh"
-# [[ -z "${plugins[*]}" ]] && plugins=(git)
-# source $ZSH/oh-my-zsh.sh
+export ZSH="$HOME/zsh/oh-my-zsh"
+[[ -z "${plugins[*]}" ]] && plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
 
 # p10k
