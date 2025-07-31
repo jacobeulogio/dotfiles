@@ -23,7 +23,7 @@ function update() {
     cd ~/nixos
     echo "Updating host: $host"
     sudo nix flake update
-    sudo nixos-rebuild switch --flake ".#$host" --upgrade
+    sudo nixos-rebuild switch --flake ".#$host" --upgrade --no-reexec
   ) && echo "Update successful." || echo "Update failed."
 }
 
