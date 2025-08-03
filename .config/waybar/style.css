@@ -1,9 +1,7 @@
 * {
   border: none;
-  /* `ttf-font-awesome` is required to be installed for icons */
   font-family: "SF Pro Display";
-
-  /* adjust font-size value to your liking: */
+  font-weight: 600;
   font-size: 15px;
 
   border-radius: 0;
@@ -26,8 +24,6 @@ window#waybar {
 #tray {
   margin: 0 8px;
 }
-
-
 
 #workspaces {
   padding: 0 10px 0 0 ;
@@ -56,11 +52,6 @@ window#waybar {
 #workspaces button:not(.empty):not(.visible) {
   border-bottom: 1px solid rgba(100,100,100,.9);
 }
-
-/* #workspaces button.empty { */
-/*   background: transparent; */
-/*   border-bottom: 2px solid transparent; */
-/* } */
 
 #cpu,
 #memory,

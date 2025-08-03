@@ -16,10 +16,13 @@
             "hyprland/workspaces"
         ],
         "modules-right": [
+            "backlight",
+            "backlight/slider",
             "pulseaudio",
             "pulseaudio/slider",
             "network",
             "tray",
+            "battery",
             "clock"
         ],
         "include": [
