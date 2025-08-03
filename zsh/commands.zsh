@@ -19,7 +19,7 @@ function update() {
   fi
 
   (
-    set -e # Exit subshell immediately if a command fails
+    set -e 
     cd ~/nixos
     echo "Updating host: $host"
     sudo nix flake update
