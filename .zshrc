@@ -34,7 +34,7 @@ source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
 export EDITOR='nvim'
 export PATH=/home/eulogio/scripts:$PATH                             # Add scripts folder to path
 export PATH=/home/eulogio/work-scripts:$PATH                        # Add work-scripts folder to path
-export GOOGLE_CLOUD_PROJECT="dashboard-441809"                      # For gemini-cli 
+# export GOOGLE_CLOUD_PROJECT="dashboard-441809"                      # For gemini-cli 
 
 DISABLE_MAGIC_FUNCTIONS="true"
 ENABLE_CORRECTION="true"

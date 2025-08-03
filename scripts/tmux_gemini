@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-tmux new-window -c $(fd --hidden --type d . ~ | fzf --tmux) \
-"source ~/.zshrc && gemini"
+tmux new-window -c $(fd --hidden --type d . ~ | fzf --tmux) "gemini"
