@@ -4,10 +4,9 @@
 * {
     font:   "SF Pro Text 12";
 
-    bg0:    #1a1a1aF2;
-    // bg0:    #242424F2;
-    bg1:    #303030F2;
-    bg2:    #242424F2;
+    bg0:    #202020E6;
+    bg1:    #7E7E7E80;
+    bg2:    #303030E6;
 
     fg0:    #DEDEDE;
     fg1:    #FFFFFF;
@@ -25,12 +24,12 @@ window {
     background-color:   @bg0;
 
     location:       center;
-    width:          700;
-    border-radius:  10;
+    width:          40%;
+    border-radius:  8;
 }
 
 inputbar {
-    font:       "SF Pro Display 18";
+    font:       "SF Pro Display 16";
     padding:    12px;
     spacing:    12px;
     children:   [ icon-search, entry ];
