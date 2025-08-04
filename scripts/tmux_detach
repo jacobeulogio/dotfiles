@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
 
-# Debugging (uncomment to log)
-# exec 3>&1
-# exec >> "/tmp/tmux_hypr.log" 2>&1
-# echo "[$(date)] Script started" >&3
+eval "$(tmux display-message -p 'CURRENT_SESSION=#S CURRENT_WINDOW=#I CURRENT_PANE=#P')"
 
-CURRENT_SESSION=$(tmux display-message -p '#S')
-CURRENT_WINDOW=$(tmux display-message -p '#I')
-CURRENT_WORKSPACE=$(hyprctl monitors | \
-    awk -v RS='' '/focused: no/ && /Monitor/ {for(i=1; i<=NF; i++) if ($i == "active") print $(i+2); exit}')
+CURRENT_WORKSPACE=$(hyprctl monitors | awk -v RS='' '/focused: no/ && /Monitor/ {for(i=1; i<=NF; i++) if ($i == "active") print $(i+2); exit}')
+
 
 TMP_DIR="${XDG_RUNTIME_DIR:-$HOME/.cache}/tmux_hypr"
 mkdir -p "$TMP_DIR"
@@ -16,10 +11,19 @@ mkdir -p "$TMP_DIR"
 if [[ $CURRENT_SESSION =~ ^[0-9]+$ ]] && (( CURRENT_SESSION > 99 )); then
     TMP_FILE="$TMP_DIR/prev_session_$CURRENT_SESSION.txt"
     if [[ -f "$TMP_FILE" ]]; then
-        read -r PREVIOUS_SESSION PREVIOUS_WORKSPACE < "$TMP_FILE"
-        tmux move-window -s "$CURRENT_SESSION:$CURRENT_WINDOW" -t "$PREVIOUS_SESSION:"
+        read -r PREVIOUS_SESSION PREVIOUS_WORKSPACE PREVIOUS_WINDOW PREVIOUS_PANE< "$TMP_FILE"
+
+        if [[ $PREVIOUS_PANE -eq 1 ]]; then 
+            tmux move-window -s "$CURRENT_SESSION:$CURRENT_WINDOW" -t "$PREVIOUS_SESSION:"
+        else
+            tmux move-pane -s "$CURRENT_SESSION:$CURRENT_WINDOW.$CURRENT_PANE" -t "$PREVIOUS_SESSION:$PREVIOUS_WINDOW"
+        fi
+
+        # Clean up 
         tmux kill-session -t 
         hyprctl dispatch killactive
+
+        # Focus back to previous workspace 
         hyprctl dispatch focusworkspaceoncurrentmonitor "$PREVIOUS_WORKSPACE"
         hyprctl dispatch focusmonitor +1
     else
@@ -31,13 +35,21 @@ else
     while (( i < 1000 )); do
         if ! tmux list-sessions -F '#S' | grep -q "^$i$"; then
             TMP_FILE="$TMP_DIR/prev_session_${i}.txt"
-            echo "$CURRENT_SESSION $CURRENT_WORKSPACE" > "$TMP_FILE"
+            echo "$CURRENT_SESSION $CURRENT_WORKSPACE $CURRENT_WINDOW $CURRENT_PANE" > "$TMP_FILE"
+
+            # Instantialize new tmux session
             tmux new-session -d -s "$i"  
+
+            # Focus monitor to empty workspace then spawn wezterm
             hyprctl dispatch focusmonitor +1
             hyprctl dispatch focusworkspaceoncurrentmonitor empty
-            wezterm start -- tmux attach -t "$i" 
-            tmux move-window -s "$CURRENT_SESSION:$CURRENT_WINDOW" -t "$i:"
-            tmux kill-window -t "$i:1"
+            wezterm start -- tmux attach -t "$i" && \ 
+
+            # Move pane
+            tmux move-pane -s "$CURRENT_SESSION:$CURRENT_WINDOW.$CURRENT_PANE" -t "$i:"
+
+            # Kill the first empty window in new terminal
+            tmux kill-pane -t "$i:1.1"
             break
         fi
         ((i++))
