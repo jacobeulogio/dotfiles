@@ -18,13 +18,9 @@ fi
 autoload -Uz compinit
 compinit
 
+# keybinds
 bindkey -e
-
-# Oh my ZSH
-export ZSH="$HOME/zsh/oh-my-zsh"
-[[ -z "${plugins[*]}" ]] && plugins=(git)
-source $ZSH/oh-my-zsh.sh
-
+bindkey "^X^E" edit-command-line
 
 # p10k
 source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
@@ -52,8 +48,6 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"                 # Make new s
 export LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
 export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 
-# . "$HOME/.atuin/bin/env"
-# . "$HOME/.local/bin/env"
 source <(fzf --zsh)
 eval "$(atuin init zsh)"
 eval "$(uv generate-shell-completion zsh)"

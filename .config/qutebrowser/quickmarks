@@ -3,3 +3,5 @@ nix https://search.nixos.org/packages
 my https://mynixos.com/
 mon https://monkeytype.com/
 gh https://github.com/
+flake https://nixos-and-flakes.thiscute.world/other-usage-of-flakes/module-system
+pills https://nixos.org/guides/nix-pills/00-preface.html
