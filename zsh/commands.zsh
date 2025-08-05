@@ -2,13 +2,20 @@
 alias tm="tmux new-session -A -s main"
 alias ipython="ipython --no-autoindent"
 alias cl="clear"
-alias refresh_fonts="rm -rf ~/.local/share/fonts/fonts && ln -s /run/current-system/sw/share/X11/fonts ~/.local/share/fonts"
 alias cd="z"
 alias ruff_init="cp ~/dotfiles/.ruff.toml ."
+alias refresh_fonts="rm -rf ~/.local/share/fonts/fonts && ln -s /run/current-system/sw/share/X11/fonts ~/.local/share/fonts"
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 
+# dev flake templates
+function dev_init() {
+  language=$1
+  nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#$language"
+}
+
+# update system
 function update() {
   local HOST_FILE="${XDG_RUNTIME_DIR:-$HOME}/nix_host"
   local host=${1:-$(cat "$HOST_FILE" 2>/dev/null)}

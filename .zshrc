@@ -15,6 +15,9 @@ if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   fi
 fi
 
+# nix direnv
+eval "$(direnv hook zsh)"
+
 autoload -Uz compinit
 compinit
 
