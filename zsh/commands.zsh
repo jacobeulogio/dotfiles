@@ -9,35 +9,6 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 
-# dev flake templates
-function dev_init() {
-  language=$1
-  cp ~/nixos/templates/$language.nix . 
-}
-
-function template() {
-  language=$1
-  nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#$language"
-}
-
-# update system
-function update() {
-  local HOST_FILE="${XDG_RUNTIME_DIR:-$HOME}/nix_host"
-  local host=${1:-$(cat "$HOST_FILE" 2>/dev/null)}
-
-  if [[ -z "$host" ]]; then
-    read 'host?Set default host: ' || return 1
-    echo "$host" > "$HOST_FILE"
-  fi
-
-  (
-    set -e 
-    cd ~/nixos
-    echo "Updating host: $host"
-    sudo nix flake update
-    sudo nixos-rebuild switch --flake ".#$host" --upgrade --no-reexec
-  ) && echo "Update successful." || echo "Update failed."
-}
 
 # Yazi
 function e() {
