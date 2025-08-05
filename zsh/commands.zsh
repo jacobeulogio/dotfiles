@@ -12,6 +12,11 @@ alias gp="git push"
 # dev flake templates
 function dev_init() {
   language=$1
+  cp ~/nixos/templates/$language.nix . 
+}
+
+function template() {
+  language=$1
   nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#$language"
 }
 

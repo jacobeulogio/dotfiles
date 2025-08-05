@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+directories=[~/nixos ~/.config/nvim ~/dotfiles]
+
+case "$1" in
+    fetch) echo 1
+    ;;
+    pull) echo 2 or 3
+    ;;
+    push) echo default
+    ;;
+    status) echo default
+    ;;
+    *) echo "not a valid command" && exit 1
+esac
+
