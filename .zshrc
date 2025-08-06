@@ -16,20 +16,6 @@ if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
 fi
 
 
-### ZSH Settings
-autoload -Uz compinit
-compinit
-
-bindkey -e
-
-autoload -z edit-command-line
-zle -N edit-command-line
-bindkey "^X^E" edit-command-line
-
-DISABLE_MAGIC_FUNCTIONS="true"
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
-
 
 ### p10k
 source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
@@ -48,6 +34,23 @@ export PATH=/home/eulogio/.cargo/bin:$PATH                          # Add work-s
 export EDITOR='nvim'
 
 
+### ZSH Settings
+autoload -Uz compinit
+compinit
+
+bindkey -e
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
+DISABLE_MAGIC_FUNCTIONS="true"
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
 ### History
 export HISTCONTROL=ignoreboth                                       # Ignore commands that start with spaces and duplicates.
 export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:pwd:* --help"     # Don't add certain commands to the history file.
@@ -58,8 +61,8 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"                 # Make new s
 
 
 ### Cli Integrations
-eval "$(direnv hook zsh)"
 source <(fzf --zsh)
+eval "$(direnv hook zsh)"
 eval "$(atuin init zsh)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(zoxide init zsh)"
@@ -69,7 +72,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if [ -f '/home/eulogio/google-cloud-sdk/path.zsh.inc' ];
-then . '/home/eulogio/google-cloud-sdk/path.zsh.inc';
+  then . '/home/eulogio/google-cloud-sdk/path.zsh.inc';
 fi
 
 if [ -f '/home/eulogio/google-cloud-sdk/completion.zsh.inc' ]; 

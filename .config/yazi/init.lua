@@ -1,9 +1,12 @@
--- require("starship"):setup()
+require("relative-motions"):setup({ show_numbers="relative", show_motion = true, enter_mode ="first" })
+require("no-status"):setup()
+require("git"):setup()
+
 require("githead"):setup({
 	show_branch = true,
 	branch_prefix = "on",
 	branch_color = "#808080",
-	branch_symbol = "",
+	branch_symbol = " ",
 	branch_borders = "",
 
 	commit_color = "bright magenta",
@@ -37,6 +40,3 @@ require("githead"):setup({
 	untracked_symbol = "?",
 })
 
-require("no-status"):setup()
-
-require("git"):setup()

@@ -19,29 +19,29 @@
 # surimiOrange  "#e46876"
 # waveAqua2     "#7aa89f"
 
-[mgr]
+[manager]
 marker_copied = { fg = "#8a9a7b", bg = "#8a9a7b" }
 marker_cut = { fg = "#e46876", bg = "#e46876" }
 marker_marked = { fg = "#a292a3", bg = "#a292a3" }
 marker_selected = { fg = "#e46876", bg = "#e46876" }
 
-cwd = { fg = "#8AA3AF" }
+cwd = { fg = "#e6c384" }
 hovered = { reversed = true }
 preview_hovered = { reversed = true }
 
 find_keyword = { fg = "#e46876", bg = "#181616" }
 find_position = {}
 
+tab_active = { reversed = true }
+tab_inactive = {}
+tab_width = 1
+
 count_copied = { fg = "#181616", bg = "#8a9a7b" }
 count_cut = { fg = "#181616", bg = "#e46876" }
 count_selected = { fg = "#181616", bg = "#e6c384" }
 
 border_symbol = "│"
-border_style = { fg = "#272727" }
-
-[tabs]
-active = { fg = "#101010", bg = "#8a8a8a" }
-inactive = { bg = "#101010", fg = "#8a8a8a" }
+border_style = { fg = "#c5c9c5" }
 
 
 [mode]
@@ -94,10 +94,10 @@ hovered = { fg = "#a292a3" }
 cols = 2
 separator = " - "
 separator_style = { fg = "#a6a69c" }
-mask = { bg = "#101010" }
+mask = { bg = "#16161d" }
 rest = { fg = "#a6a69c" }
 cand = { fg = "#8ba4b0" }
-desc = { fg = "#a6a69c" }
+desc = { fg = "#54546d" }
 
 [help]
 on = { fg = "#7aa89f" }
@@ -129,9 +129,9 @@ rules = [
     { name = "*", is = "orphan", fg = "#c4746e" },
 
     # executables
-    { name = "*", is = "exec", fg = "#a6a69c" }, #76946a
+    { name = "*", is = "exec", fg = "#76946a" },
 
     # fallback
     { name = "*", fg = "#c5c9c5" },
-    { name = "*/", fg = "#8AA3AF" },
+    { name = "*/", fg = "#8ba4b0" },
 ]

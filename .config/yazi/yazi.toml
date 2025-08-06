@@ -4,9 +4,9 @@
 
 [mgr]
 ratio = [1, 4, 3]
-sort_by = "alphabetical"
+sort_by = "size"
 sort_sensitive = false
-sort_reverse = false
+sort_reverse = true
 sort_dir_first = true
 sort_translit = false
 linemode = "size"
@@ -56,12 +56,12 @@ append_previewers = [{ name = "*", run = "file-extra-metadata" }]
 # Setup keybind for spotter: https://github.com/sxyazi/yazi/pull/1802
 append_spotters = [{ name = "*", run = "file-extra-metadata" }]
 
-[[plugin.prepend_fetchers]]
-id = "git"
-name = "*"
-run = "git"
-
-[[plugin.prepend_fetchers]]
-id = "git"
-name = "*/"
-run = "git"
+# [[plugin.prepend_fetchers]]
+# id = "git"
+# name = "*"
+# run = "git"
+#
+# [[plugin.prepend_fetchers]]
+# id = "git"
+# name = "*/"
+# run = "git"

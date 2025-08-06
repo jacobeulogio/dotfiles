@@ -1,37 +1,27 @@
 [[plugin.deps]]
-use = "Rolv-Apneseth/starship"
-rev = "6a0f3f7"
-hash = "d5a74d95c2e8194ac352c5e10e81e64f"
-
-[[plugin.deps]]
-use = "llanosrocas/githead"
-rev = "8df5b68"
-hash = "f9d28d35e8e500a802b95a8b46117123"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:no-status"
-rev = "63f9650"
+rev = "de53d90"
 hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[plugin.deps]]
-use = "AnirudhG07/rich-preview"
-rev = "843c3fa"
-hash = "b4040931f0d2f9670ddb4923e55cd881"
+use = "boydaihungst/file-extra-metadata"
+rev = "0d61be7"
+hash = "27b2369f54b81d575841b2ce04418a29"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:piper"
-rev = "63f9650"
-hash = "2bdc137505b8d9a0cc867a57d0e99b01"
+use = "dedukun/relative-motions"
+rev = "a603d9e"
+hash = "e02a788e5b8ae0fb47fd0193dda589cc"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "63f9650"
-hash = "bf6f074cd41ee33c3360341d168f9733"
+rev = "de53d90"
+hash = "63b6c222bf2103b3023389dde5e2ecfe"
 
 [[plugin.deps]]
-use = "boydaihungst/file-extra-metadata"
-rev = "ec035d6"
-hash = "b23b7db6beb2854a689c648a38843f8c"
+use = "llanosrocas/githead"
+rev = "76fe4b8"
+hash = "10c3bc6cd6f3223e18f2483320a9e24a"
 
 [[flavor.deps]]
 use = "marcosvnmelo/kanagawa-dragon"
