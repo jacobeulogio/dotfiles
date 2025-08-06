@@ -43,6 +43,13 @@ settings:
     global: smart
   colors.webpage.preferred_color_scheme:
     global: dark
+  completion.open_categories:
+    global:
+    - searchengines
+    - quickmarks
+    - bookmarks
+    - history
+    - filesystem
   content.blocking.method:
     global: both
   content.javascript.clipboard:

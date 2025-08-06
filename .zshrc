@@ -1,4 +1,7 @@
-# Tmux 
+#============================
+# Tmux Auto-start
+#============================
+
 if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   if tmux list-clients -F '#S' | grep "main" 2>/dev/null; then
     i=1
@@ -15,35 +18,55 @@ if [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   fi
 fi
 
-# nix direnv
-eval "$(direnv hook zsh)"
+
+#============================
+# ZSH Settings
+#============================
 
 autoload -Uz compinit
 compinit
 
-# keybinds
 bindkey -e
 
-# enables editing command in editor
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
-
-# p10k
-source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Envionment Variables
-export EDITOR='nvim'
-export PATH=/home/eulogio/scripts:$PATH                             # Add scripts folder to path
-export PATH=/home/eulogio/work-scripts:$PATH                        # Add work-scripts folder to path
-# export GOOGLE_CLOUD_PROJECT="dashboard-441809"                      # For gemini-cli 
 
 DISABLE_MAGIC_FUNCTIONS="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
+
+#============================
+# p10k
+#============================
+
+source $HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+#============================
+# Path
+#============================
+
+source $HOME/zsh/commands.zsh                                       # Commands and Aliases
+export PATH=/home/eulogio/scripts:$PATH                             # Add scripts folder to path
+export PATH=/home/eulogio/work-scripts:$PATH                        # Add work-scripts folder to path
+export PATH=/home/eulogio/.cargo/bin:$PATH                          # Add work-scripts folder to path
+
+
+#============================
+# Env Vars
+#============================
+
+# export GOOGLE_CLOUD_PROJECT="dashboard-441809"                      # For gemini-cli 
+export EDITOR='nvim'
+
+
+#============================
 # History
+#============================
+
 export HISTCONTROL=ignoreboth                                       # Ignore commands that start with spaces and duplicates.
 export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:pwd:* --help"     # Don't add certain commands to the history file.
 HISTFILE=~/.histfile
@@ -51,10 +74,12 @@ HISTSIZE=1000
 SAVEHIST=1000
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"                 # Make new shells get the history lines from all previous shells instead of the default "last window closed" history.
 
-# Use custom `less` colors for `man` pages.
-export LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
-export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 
+#============================
+# Cli Integrations
+#============================
+
+eval "$(direnv hook zsh)"
 source <(fzf --zsh)
 eval "$(atuin init zsh)"
 eval "$(uv generate-shell-completion zsh)"
@@ -73,7 +98,11 @@ if [ -f '/home/eulogio/google-cloud-sdk/completion.zsh.inc' ];
   then . '/home/eulogio/google-cloud-sdk/completion.zsh.inc';
 fi
 
-source $HOME/zsh/commands.zsh                                       # Commands and Aliases
+
+#============================
+# Plugins
+#============================
+
 source ~/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source ~/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh

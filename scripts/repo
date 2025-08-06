@@ -49,6 +49,9 @@ case "$1" in
     pull)
         iterator pull
         ;;
+    stash)
+        iterator stash
+        ;;
     *) echo "Current Repositories:"
         for repo in "${repos[@]}"; do
             echo $repo

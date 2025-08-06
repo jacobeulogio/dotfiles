@@ -2,7 +2,7 @@
 
 set -euo pipefail 
 
-HOST_FILE="${XDG_RUNTIME_DIR:-$HOME}/nix_host"
+HOST_FILE="$HOME/.nix_host"
 host=${1:-$(cat "$HOST_FILE" 2>/dev/null)}
 
 if [[ -z "$host" ]]; then
