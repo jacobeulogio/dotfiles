@@ -1,16 +1,60 @@
 #!/usr/bin/env bash
 
-directories=[~/nixos ~/.config/nvim ~/dotfiles]
+repos=(
+    "$HOME/nixos"
+    "$HOME/dotfiles"
+    "$HOME/.config/nvim"
+)
+
+iterator() {
+    if [ $# -eq 0 ]; then
+        echo "Error: No command provided to the iterator function." >&2
+        return 1 
+    fi
+
+    local repo
+
+    for repo in "${repos[@]}"; do
+        if [ ! -d "$repo" ]; then
+            echo -e "Warning: Directory not found, skipping: $repo\n"
+            continue 
+        fi
+
+        # separator
+        echo -e "~~~~~~~~~~~~~~~~~~~~~~~~~ $repo ~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+
+        # cd into repo then execute command and any included args
+        ( cd "$repo" && git "$@")
+
+        # echo new line
+        echo ""
+
+    done
+}
 
 case "$1" in
-    fetch) echo 1
-    ;;
-    pull) echo 2 or 3
-    ;;
-    push) echo default
-    ;;
-    status) echo default
-    ;;
-    *) echo "not a valid command" && exit 1
+    status)
+        iterator status
+        ;;
+    fetch)
+        iterator fetch
+        ;;
+    add)
+        iterator add .
+        ;;
+    commit)
+        iterator commit
+        ;;
+    push)
+        iterator push
+        ;;
+    pull)
+        iterator pull
+        ;;
+    *) echo "Current Repositories:"
+        for repo in "${repos[@]}"; do
+            echo $repo
+        done
+        ;;
 esac
 
