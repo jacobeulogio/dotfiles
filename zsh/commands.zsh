@@ -9,7 +9,6 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 
-
 # Yazi
 function e() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

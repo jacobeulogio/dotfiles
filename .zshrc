@@ -23,6 +23,10 @@ compinit
 
 # keybinds
 bindkey -e
+
+# enables editing command in editor
+autoload -z edit-command-line
+zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
 # p10k
