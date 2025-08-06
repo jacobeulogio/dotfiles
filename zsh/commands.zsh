@@ -3,8 +3,12 @@ alias tm="tmux new-session -A -s main"
 alias ipython="ipython --no-autoindent"
 alias cl="clear"
 alias cd="z"
-alias ruff_init="cp ~/dotfiles/.ruff.toml ."
 alias refresh_fonts="rm -rf ~/.local/share/fonts/fonts && ln -s /run/current-system/sw/share/X11/fonts ~/.local/share/fonts"
+
+# initialize base ruff config
+alias ruff_init="cp ~/dotfiles/.ruff.toml ."
+
+# git
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
