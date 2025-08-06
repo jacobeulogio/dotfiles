@@ -20,13 +20,11 @@ iterator() {
             continue 
         fi
 
-        # separator
         echo -e "~~~~~~~~~~~~~~~~~~~~~~~~~ $repo ~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 
-        # cd into repo then execute command and any included args
+        # cd into repo then execute git command and any included args
         ( cd "$repo" && git "$@")
 
-        # echo new line
         echo ""
 
     done
