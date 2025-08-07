@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+tmux new-window -c $(fd --hidden --type d . ~ | fzf --tmux) "opencode"
