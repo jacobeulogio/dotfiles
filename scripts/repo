@@ -1,61 +1,59 @@
 #!/usr/bin/env bash
 
+# set -euo pipefail
+
 repos=(
     "$HOME/nixos"
     "$HOME/dotfiles"
     "$HOME/.config/nvim"
 )
 
-iterator() {
-    if [ $# -eq 0 ]; then
-        echo "Error: No command provided to the iterator function." >&2
-        return 1 
+if [ $# -eq 0 ]; then
+    echo "Error: No command provided to the iterator function." >&2
+    exit 1
+fi
+
+for repo in "${repos[@]}"; do
+    if [ ! -d "$repo" ]; then
+        echo -e "Warning: Directory not found, skipping: $repo\n"
+        continue
     fi
 
-    local repo
+    echo -e "~~~~~~~~~~~~~~~~~~~~~~~~~ $repo ~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 
-    for repo in "${repos[@]}"; do
-        if [ ! -d "$repo" ]; then
-            echo -e "Warning: Directory not found, skipping: $repo\n"
-            continue 
-        fi
+    # cd into repo then execute git command and any included args
+    ( cd "$repo" && git "$@")
 
-        echo -e "~~~~~~~~~~~~~~~~~~~~~~~~~ $repo ~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+    echo ""
 
-        # cd into repo then execute git command and any included args
-        ( cd "$repo" && git "$@")
+done
 
-        echo ""
-
-    done
-}
-
-case "$1" in
-    status)
-        iterator status
-        ;;
-    fetch)
-        iterator fetch
-        ;;
-    add)
-        iterator add .
-        ;;
-    commit)
-        iterator commit
-        ;;
-    push)
-        iterator push
-        ;;
-    pull)
-        iterator pull
-        ;;
-    stash)
-        iterator stash
-        ;;
-    *) echo "Current Repositories:"
-        for repo in "${repos[@]}"; do
-            echo $repo
-        done
-        ;;
-esac
-
+# case "$1" in
+#     status)
+#         iterator status
+#         ;;
+#     fetch)
+#         iterator fetch
+#         ;;
+#     add)
+#         iterator add .
+#         ;;
+#     commit)
+#         iterator commit
+#         ;;
+#     push)
+#         iterator push
+#         ;;
+#     pull)
+#         iterator pull
+#         ;;
+#     stash)
+#         iterator stash
+#         ;;
+#     *) echo "Current Repositories:"
+#         for repo in "${repos[@]}"; do
+#             echo $repo
+#         done
+#         ;;
+# esac
+#
