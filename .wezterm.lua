@@ -9,11 +9,10 @@ config.initial_rows = 46
 config.font_size = 13
 
 config.font = wezterm.font("GeistMono Nerd Font Mono", {weight='Regular'})
--- config.font = wezterm.font("JetBrainsMono Nerd Font", {weight="Light", stretch="Normal", style="Normal"})
 
 config.color_scheme = "Kanagawa Dragon (Gogh)"
 config.colors = {
-	background = "black",
+	background = "#0A0A0A",
 	cursor_bg = "silver",
 	cursor_border = "silver",
 	selection_fg = "black",
@@ -21,7 +20,7 @@ config.colors = {
 
 config.enable_tab_bar = false
 
-config.window_background_opacity = 0.95
+-- config.window_background_opacity = 0.95
 
 config.window_close_confirmation = "NeverPrompt"
 

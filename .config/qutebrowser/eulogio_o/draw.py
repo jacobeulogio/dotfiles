@@ -1,8 +1,8 @@
 def colors(c, options={}):
     palette = {
-        "background": "#121212",
-        "background-alt": "#121212",
-        "background-attention": "#181920",
+        "background": "#0A0A0A",
+        "background-alt": "#0A0A0A",
+        "background-attention": "#0A0A0A",
         "border": "#101010",
         "current-line": "#262626",
         "selection": "#262626",

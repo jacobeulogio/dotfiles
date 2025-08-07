@@ -81,6 +81,7 @@
         "format": "{avg_frequency} GHz  |  {usage}%"
     },
     "network": {
+        // "interface": "enp121s0f3u1u1",
         "format": "↓ {bandwidthDownBytes}",
         "interval": 5,
         "on-click": "nm-applet"
