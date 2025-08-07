@@ -6,6 +6,7 @@ repos=(
     "$HOME/nixos"
     "$HOME/dotfiles"
     "$HOME/.config/nvim"
+    "$HOME/projects/sql"
 )
 
 if [ $# -eq 0 ]; then
