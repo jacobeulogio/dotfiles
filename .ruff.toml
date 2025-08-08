@@ -39,6 +39,7 @@ ignore = [
     "INP001", # File is not a package
     "PD901",  # `df` is a bad variable name
     "ERA001", # Commented out code
+    "T201", # Print Found
 ]
 
 fixable = ["ALL"]
