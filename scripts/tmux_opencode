@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-tmux new-window -c $(fd --hidden --type d . ~ | fzf --tmux) "opencode"
+dir=$(fd --hidden --type d . ~ | fzf --tmux) && \
+tmux new-window -c $dir "opencode" || exit 1 &> /dev/null
