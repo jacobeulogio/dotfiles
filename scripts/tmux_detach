@@ -36,6 +36,7 @@ else
         if ! tmux list-sessions -F '#S' | grep -q "^$i$"; then
             TMP_FILE="$TMP_DIR/prev_session_${i}.txt"
             echo "$CURRENT_SESSION $CURRENT_WORKSPACE $CURRENT_WINDOW $CURRENT_PANE" > "$TMP_FILE"
+            notify-send "$CURRENT_SESSION $CURRENT_WORKSPACE $CURRENT_WINDOW $CURRENT_PANE"
 
             # Instantialize new tmux session
             tmux new-session -d -s "$i"  
@@ -43,13 +44,14 @@ else
             # Focus monitor to empty workspace then spawn wezterm
             hyprctl dispatch focusmonitor +1
             hyprctl dispatch focusworkspaceoncurrentmonitor empty
-            wezterm start -- tmux attach -t "$i" && \ 
+            wezterm start -- tmux attach -t "$i" && \
 
             # Move pane
             tmux move-pane -s "$CURRENT_SESSION:$CURRENT_WINDOW.$CURRENT_PANE" -t "$i:"
 
             # Kill the first empty window in new terminal
             tmux kill-pane -t "$i:1.1"
+
             break
         fi
         ((i++))
