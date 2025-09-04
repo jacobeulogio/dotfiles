@@ -1,7 +1,7 @@
 ---
 description: Educational agent for teaching programming concepts, algorithms, and software engineering principles
 mode: subagent
-model: anthropic/claude-sonnet-4-20250514
+model: anthropic/claude-sonnet-4
 temperature: 0.7
 tools:
   write: false
