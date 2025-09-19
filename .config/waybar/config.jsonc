@@ -2,37 +2,7 @@
     {
         "position": "top",
         "height": 32,
-        "output": "DP-2",
-        "modules-left": [
-            "custom/disk_icon",
-            "disk",
-            "custom/memory_icon",
-            "memory",
-            "custom/cpu_icon",
-            "cpu",
-            "temperature"
-        ],
-        "modules-center": [
-            "hyprland/workspaces"
-        ],
-        "modules-right": [
-            "backlight",
-            "backlight/slider",
-            "pulseaudio",
-            "pulseaudio/slider",
-            "network",
-            "tray",
-            "battery",
-            "clock"
-        ],
-        "include": [
-            "~/.config/waybar/modules.jsonc"
-        ]
-    },
-    {
-        "position": "top",
-        "height": 32,
-        "output": "HDMI-A-2",
+        // "output": "*",
         "modules-left": [
             "custom/disk_icon",
             "disk",
@@ -59,4 +29,34 @@
             "~/.config/waybar/modules.jsonc"
         ]
     }
+    //,{
+    //     "position": "top",
+    //     "height": 32,
+    //     "output": "HDMI-A-2",
+    //     "modules-left": [
+    //         "custom/disk_icon",
+    //         "disk",
+    //         "custom/memory_icon",
+    //         "memory",
+    //         "custom/cpu_icon",
+    //         "cpu",
+    //         "temperature"
+    //     ],
+    //     "modules-center": [
+    //         "hyprland/workspaces"
+    //     ],
+    //     "modules-right": [
+    //         "backlight",
+    //         "backlight/slider",
+    //         "pulseaudio",
+    //         "pulseaudio/slider",
+    //         "network",
+    //         "tray",
+    //         "battery",
+    //         "clock"
+    //     ],
+    //     "include": [
+    //         "~/.config/waybar/modules.jsonc"
+    //     ]
+    // }
 ]
