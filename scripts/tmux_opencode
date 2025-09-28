@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-dir=$(fd --hidden --type d --max-depth 2 . ~ | fzf --tmux || echo "~") && \
+dir=$(fd --hidden --type d --max-depth 3 . ~ | fzf --tmux || echo "~") && \
 tmux new-window "opencode $dir" || exit 1 &> /dev/null

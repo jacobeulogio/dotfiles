@@ -21,6 +21,10 @@ settings:
         <Ctrl+Shift+m>: spawn mpv {url}
         <Ctrl+h>: tab-prev
         <Ctrl+l>: tab-next
+        <Shift+Down>: tab-next
+        <Shift+Left>: back
+        <Shift+Right>: forward
+        <Shift+Up>: tab-prev
         M: hint links spawn mpv {hint-url}
   bindings.key_mappings:
     global:
