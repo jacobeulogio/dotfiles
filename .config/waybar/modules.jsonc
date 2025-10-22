@@ -30,7 +30,7 @@
         "scroll-step": 1
     },
     "backlight": {
-        "device": "intel_backlight",
+        "device": "amdgpu_bl2",
         "rotate": 0,
         "format": "{icon}",
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
@@ -38,10 +38,10 @@
         "min-length": 2
     },
     "backlight/slider": {
-        "min": 5,
+        "min": 0,
         "max": 100,
         "rotate": 0,
-        "device": "intel_backlight",
+        "device": "amdgpu_bl2",
         "scroll-step": 1
     },
     "hyprland/workspaces": {

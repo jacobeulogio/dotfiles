@@ -12,6 +12,7 @@ alias ruff_init="cp ~/dotfiles/.ruff.toml ."
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
+alias astro="/usr/local/bin/astro"
 
 # Yazi
 function e() {

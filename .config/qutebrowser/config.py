@@ -8,6 +8,18 @@ eulogio_o.draw.colors(c, {"spacing": {"vertical": 6, "horizontal": 8}})
 config.bind("<Ctrl-Shift-m>", "spawn mpv {url}")
 config.bind("<Shift-m>", "hint links spawn mpv {hint-url}")
 
+# # Hardware Acceleration
+# config.set(
+#     "qt.args",
+#     [
+#         "ignore-gpu-blocklist",
+#         "enable-gpu-rasterization",
+#         "enable-accelerated-video-decode",
+#         "enable-quic",
+#         "enable-zero-copy",
+#     ],
+# )
+
 c.aliases = {
     "e": "session-load",
     "w": "session-save",
