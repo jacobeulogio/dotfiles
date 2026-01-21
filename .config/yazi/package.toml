@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:no-status"
-rev = "de53d90"
+rev = "56971d0"
 hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[plugin.deps]]
 use = "boydaihungst/file-extra-metadata"
-rev = "0d61be7"
-hash = "27b2369f54b81d575841b2ce04418a29"
+rev = "4fbb106"
+hash = "8765a20c837f4be5718f89ab1cf33b4"
 
 [[plugin.deps]]
 use = "dedukun/relative-motions"
@@ -15,20 +15,20 @@ hash = "e02a788e5b8ae0fb47fd0193dda589cc"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "de53d90"
-hash = "63b6c222bf2103b3023389dde5e2ecfe"
+rev = "56971d0"
+hash = "36a484acf6a0a0219c543ccb4cee218f"
 
 [[plugin.deps]]
 use = "llanosrocas/githead"
-rev = "76fe4b8"
-hash = "10c3bc6cd6f3223e18f2483320a9e24a"
+rev = "71dabe4"
+hash = "73d2758775276ae7d824b43e53d0b350"
 
 [[flavor.deps]]
 use = "marcosvnmelo/kanagawa-dragon"
 rev = "4905527"
-hash = "5fd7aa0bf4e7d9753ad8a4660a6eb94f"
+hash = "35929fa6d7ecf291d3d39e58167e7770"
 
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
-rev = "31167ed"
-hash = "a04e157148549bacbb2831aab0e6e8cb"
+rev = "04985d1"
+hash = "c69a63981e254a3a06a11c2bf0e6af1d"
