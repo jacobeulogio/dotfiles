@@ -75,9 +75,9 @@ return {
           and true
         or options.show_behind_ahead_remote,
       behind_remote_color = options.behind_remote_color or "bright magenta",
-      behind_remote_symbol = options.behind_remote_symbol or "⇣",
+      behind_remote_symbol = options.behind_remote_symbol or "󱦲",
       ahead_remote_color = options.ahead_remote_color or "bright magenta",
-      ahead_remote_symbol = options.ahead_remote_symbol or "⇡",
+      ahead_remote_symbol = options.ahead_remote_symbol or "󱦲",
 
       show_stashes = options.show_stashes == nil and true
         or options.show_stashes,
