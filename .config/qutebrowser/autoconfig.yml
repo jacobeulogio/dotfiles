@@ -54,8 +54,12 @@ settings:
     - bookmarks
     - history
     - filesystem
+  content.blocking.enabled:
+    global: false
   content.blocking.method:
     global: both
+  content.desktop_capture:
+    https://teams.microsoft.com: true
   content.javascript.clipboard:
     global: access
     https://chatgpt.com: access-paste
