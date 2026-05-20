@@ -54,8 +54,12 @@ settings:
     - bookmarks
     - history
     - filesystem
+  content.blocking.adblock.lists:
+    global:
+    - https://easylist.to/easylist/easylist.txt
+    - https://easylist.to/easylist/easyprivacy.txt
   content.blocking.enabled:
-    global: false
+    global: true
   content.blocking.method:
     global: both
   content.desktop_capture:
