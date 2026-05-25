@@ -1,6 +1,6 @@
 # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+# "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [mgr]
 ratio = [1, 4, 3]
@@ -51,10 +51,10 @@ reveal = [
 ]
 
 [plugin]
-append_previewers = [{ name = "*", run = "file-extra-metadata" }]
+# append_previewers = [{ name = "*", run = "file-extra-metadata" }]
 # yazi v0.4 after 21/11/2024
 # Setup keybind for spotter: https://github.com/sxyazi/yazi/pull/1802
-append_spotters = [{ name = "*", run = "file-extra-metadata" }]
+# append_spotters = [{ name = "*", run = "file-extra-metadata" }]
 
 # [[plugin.prepend_fetchers]]
 # id = "git"
