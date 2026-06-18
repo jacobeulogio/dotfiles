@@ -1,19 +1,7 @@
 [bar.default]
 center = [ "workspaces" ]
 color = "primary"
-end = [
-    "media",
-    "tray",
-    "notifications",
-    "clipboard",
-    "network",
-    "bluetooth",
-    "volume",
-    "brightness",
-    "control-center",
-    "battery",
-    "clock"
-]
+end = [ "tray", "network", "bluetooth", "volume", "brightness", "control-center", "battery", "clock" ]
 font_family = "SF Pro Display"
 icon_color = "primary"
 margin_edge = 0
@@ -61,6 +49,7 @@ ui_scale = 1.0500000081956387
     floating_offset = 0
     launcher_categories = false
     launcher_session_search = true
+    launcher_show_icons = false
     open_near_click_control_center = true
     open_near_click_launcher = true
     session_placement = "centered"
@@ -100,7 +89,7 @@ show_label = false
 display = "text"
 
 [widget.sysmon]
-capsule = true
+capsule = false
 display = "text"
 scale = 1.05
 stat = "disk_pct"
@@ -109,7 +98,7 @@ stat = "disk_pct"
 display = "text"
 
 [widget.tray]
-hidden = [ "blueman" ]
+hidden = [ "blueman", "nm-applet" ]
 
 [widget.volume]
 scale = 1.05
