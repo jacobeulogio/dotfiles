@@ -10,7 +10,6 @@ local clipboard = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 -- local clipboard = "noctalia msg panel-toggle clipboard"
 local settings = "noctalia msg settings-toggle"
 
-
 hl.config({
 	binds = {
 		allow_workspace_cycles = true,
@@ -19,8 +18,8 @@ hl.config({
 
 -- Function keys
 hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("~/.config/hypr/scripts/launch-waybar.sh"))
-hl.bind(mainMod .. " + F2", hl.dsp.exec_cmd("hyprctl keyword monitor eDP-2,preferred,auto,1"))
-hl.bind(mainMod .. " + F3", hl.dsp.exec_cmd("hyprctl keyword monitor eDP-2,disable"))
+hl.bind(mainMod .. " + F2", function() hl.monitor({ output = "eDP-2", mode = "preferred", position = "auto", scale = 1 , disabled = false}) end)
+hl.bind(mainMod .. " + F3", function() hl.monitor({ output = "eDP-2", disabled = true }) end)
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -w 1)" - | wl-copy'))
 
 -- App launchers
@@ -39,12 +38,12 @@ hl.bind(mainMod .. " + Y", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = 1 }))
 
--- noctalia 
+-- noctalia
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(dmenu))
 hl.bind(mainMod .. "+ CTRL + S", hl.dsp.exec_cmd(settings))
 
-hl.bind(mainMod .. " + S", hl.dsp.workspace.swap_monitors({monitor1="current", monitor2="+1"}))
+hl.bind(mainMod .. " + S", hl.dsp.workspace.swap_monitors({ monitor1 = "current", monitor2 = "+1" }))
 hl.bind(mainMod .. " + E", hl.dsp.focus({ workspace = "empty", current_monitor = true }))
 hl.bind(mainMod .. " + Q", hl.dsp.focus({ workspace = "previous" }))
 
