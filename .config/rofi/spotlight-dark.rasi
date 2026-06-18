@@ -4,9 +4,9 @@
 * {
     font:   "SF Pro Text 12";
 
-    bg0:    #1C1C1CE6;
-    bg1:    #30303080;
-    bg2:    #2B2B2BE6;
+    bg0:    #101010FF;
+    bg1:    #1C1C1CFF;
+    bg2:    #1B1B1BFF;
 
     fg0:    #DEDEDE;
     fg1:    #FFFFFF;
