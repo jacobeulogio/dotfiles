@@ -1,0 +1,124 @@
+[bar.default]
+center = [ "workspaces" ]
+color = "primary"
+end = [
+    "media",
+    "tray",
+    "notifications",
+    "clipboard",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "control-center",
+    "battery",
+    "clock"
+]
+font_family = "SF Pro Display"
+icon_color = "primary"
+margin_edge = 0
+margin_ends = 0
+radius = 0
+scale = 1.05
+start = [ "session", "sysmon", "ram", "cpu", "temp" ]
+widget_spacing = 20
+
+[desktop_widgets]
+enabled = false
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 1280.0
+    cy = 1321.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+[shell]
+settings_show_advanced = true
+ui_scale = 1.0500000081956387
+
+    [shell.panel]
+    floating_offset = 0
+    launcher_categories = false
+    launcher_session_search = true
+    open_near_click_control_center = true
+    open_near_click_launcher = true
+    session_placement = "centered"
+    wallpaper_placement = "centered"
+
+[theme]
+builtin = "Rosé Pine"
+community_palette = "Monochrome"
+custom_palette = "baguio-mo"
+source = "community"
+wallpaper_scheme = "m3-monochrome"
+
+[wallpaper]
+directory = "/home/eulogio/dotfiles/.config/hypr"
+enabled = false
+
+    [wallpaper.default]
+    path = "/home/eulogio/dotfiles/.config/hypr/baguio.jpg"
+
+    [wallpaper.last]
+    path = "/home/eulogio/dotfiles/.config/hypr/baguio.jpg"
+
+[widget.clock]
+format = "{:%a  %b  %d   %H:%M}"
+scale = 1.05
+
+[widget.control-center]
+glyph = "adjustments-horizontal"
+
+[widget.cpu]
+display = "text"
+
+[widget.network]
+show_label = false
+
+[widget.ram]
+display = "text"
+
+[widget.sysmon]
+capsule = true
+display = "text"
+scale = 1.05
+stat = "disk_pct"
+
+[widget.temp]
+display = "text"
+
+[widget.tray]
+hidden = [ "blueman" ]
+
+[widget.volume]
+scale = 1.05
+show_label = false
+
+[widget.workspaces]
+empty_color = "outline"
+focused_color = "error"
+font_weight = 300
+minimal = true
+occupied_color = "primary"
+scale = 1.25
