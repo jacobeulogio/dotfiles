@@ -64,6 +64,9 @@ settings:
     global: both
   content.desktop_capture:
     https://teams.microsoft.com: true
+  content.headers.user_agent:
+    https://accounts.google.com/*: Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101
+      Firefox/135
   content.javascript.clipboard:
     global: access
     https://chatgpt.com: access-paste
@@ -75,6 +78,8 @@ settings:
     global: true
   content.media.video_capture:
     global: true
+  content.notifications.enabled:
+    https://web.tolstoycomments.com: false
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true
   content.tls.certificate_errors:
