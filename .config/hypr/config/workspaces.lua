@@ -9,6 +9,7 @@ hl.workspace_rule({ workspace = "6", persistent = true })
 hl.workspace_rule({ workspace = "7", persistent = true })
 hl.workspace_rule({ workspace = "8", persistent = true })
 hl.workspace_rule({ workspace = "9", persistent = true })
+hl.workspace_rule({ workspace = "10", persistent = true })
 
 hl.config({
     dwindle = {
