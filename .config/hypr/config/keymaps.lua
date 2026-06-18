@@ -43,9 +43,7 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(dmenu))
 hl.bind(mainMod .. "+ CTRL + S", hl.dsp.exec_cmd(settings))
 
--- NOTE: Only the last bind for a given key is active.
--- You had two binds for SUPER+S (DP-1 and DP-2). Only DP-2 is active here.
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprctl dispatch swapactiveworkspaces HDMI-A-1 DP-2"))
+hl.bind(mainMod .. " + S", hl.dsp.workspace.swap_monitors({monitor1="current", monitor2="+1"}))
 hl.bind(mainMod .. " + E", hl.dsp.focus({ workspace = "empty", current_monitor = true }))
 hl.bind(mainMod .. " + Q", hl.dsp.focus({ workspace = "previous" }))
 
@@ -70,31 +68,18 @@ hl.bind(mainMod .. " + CTRL + l", hl.dsp.exec_cmd("hyprctl dispatch resizeactive
 -- Switch workspaces with mainMod + [0-9]
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i, current_monitor = true }))
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i, on_current_monitor = true }))
 end
-hl.bind(mainMod .. " + I", hl.dsp.focus({ workspace = "e-1", current_monitor = true }))
-hl.bind(mainMod .. " + O", hl.dsp.focus({ workspace = "e+1", current_monitor = true }))
 
--- Switch workspaces on other monitor with mainMod + CTRL + [0-9]
-for i = 1, 10 do
-	local key = i % 10
-	-- NOTE: old config used workspace number 0 for key 0 instead of 10
-	local ws = (i == 10) and 0 or i
-	hl.bind(
-		mainMod .. " + CTRL + " .. key,
-		hl.dsp.exec_cmd(
-			"hyprctl dispatch focusmonitor +1 && hyprctl dispatch focusworkspaceoncurrentmonitor "
-				.. ws
-				.. " && hyprctl dispatch focusmonitor -1"
-		)
-	)
-end
+hl.bind(mainMod .. " + I", hl.dsp.focus({ workspace = "e-1", on_current_monitor = true }))
+hl.bind(mainMod .. " + O", hl.dsp.focus({ workspace = "e+1", on_current_monitor = true }))
 
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
 	local key = i % 10
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
+
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.window.move({ workspace = "e-1" }))
 hl.bind(mainMod .. " + SHIFT + O", hl.dsp.window.move({ workspace = "e+1" }))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.window.move({ workspace = "empty" }))

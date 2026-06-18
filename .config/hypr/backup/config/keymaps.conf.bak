@@ -29,7 +29,6 @@ bind = $mainMod, F, fullscreen, 1
 bind = $mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
 bind = $mainMod SHIFT, S, exec, grim -g "$(slurp -w 1)" - | wl-copy
 bind = $mainMod, S, swapactiveworkspaces, HDMI-A-1 DP-1
-bind = $mainMod, S, swapactiveworkspaces, HDMI-A-1 DP-2
 bind = $mainMod, E, focusworkspaceoncurrentmonitor, empty
 bind = $mainMod, Q, workspace, previous
 
