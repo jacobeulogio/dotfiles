@@ -2,12 +2,12 @@
 
 local mainMod = "SUPER"
 local menu = "rofi -show run"
--- local dmenu = "rofi -show drun"
--- local clipboard = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+local dmenu = "rofi -show drun"
+local clipboard = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
 -- Nocatalia
-local dmenu = "noctalia msg panel-toggle launcher"
-local clipboard = "noctalia msg panel-toggle clipboard"
+-- local dmenu = "noctalia msg panel-toggle launcher"
+-- local clipboard = "noctalia msg panel-toggle clipboard"
 local settings = "noctalia msg settings-toggle"
 
 
@@ -21,6 +21,7 @@ hl.config({
 hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("~/.config/hypr/scripts/launch-waybar.sh"))
 hl.bind(mainMod .. " + F2", hl.dsp.exec_cmd("hyprctl keyword monitor eDP-2,preferred,auto,1"))
 hl.bind(mainMod .. " + F3", hl.dsp.exec_cmd("hyprctl keyword monitor eDP-2,disable"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -w 1)" - | wl-copy'))
 
 -- App launchers
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("wezterm"))
