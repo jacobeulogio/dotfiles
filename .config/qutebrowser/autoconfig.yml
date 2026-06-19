@@ -86,6 +86,8 @@ settings:
     global: load-insecurely
   downloads.position:
     global: bottom
+  scrolling.smooth:
+    global: true
   tabs.indicator.padding:
     global:
       bottom: 2
