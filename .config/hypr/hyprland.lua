@@ -16,12 +16,13 @@ require("config/workspaces")
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("nm-applet & swaync & blueman-applet & hyprpaper & hyprpolkitagent")
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("waybar")
     -- hl.exec_cmd("noctalia")
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("systemctl --user start steam-bigpicture")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
-    hl.exec_cmd("systemctl --user start hyprpolkitagent")
-    hl.exec_cmd("sleep 5s && systemctl --user start steam-bigpicture")
 end)
 
 -------------------------------
