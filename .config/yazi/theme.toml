@@ -1,5 +1,6 @@
 [flavor]
-dark  = "kanagawa-e"
+dark  = "kanagawa-dragon-e"
+# dark  = "kanagawa-e"
 light = ""
 
 [mgr]
